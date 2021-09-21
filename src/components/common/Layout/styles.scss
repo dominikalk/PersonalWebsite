@@ -1,0 +1,13 @@
+@import "../../styles.scss";
+
+.content {
+  background-color: $black-color;
+  margin: -8px;
+  height: 100vh;
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 1rem;
+  }
+}

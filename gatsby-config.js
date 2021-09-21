@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.dominikalk.com",
     title: "dominikalk",
   },
   plugins: [
@@ -22,6 +22,16 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto Mono`,
+          `Roboto`
+        ],
+        display: 'swap'
+      }
     },
   ],
 };
