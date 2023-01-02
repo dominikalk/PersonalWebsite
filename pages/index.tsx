@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
 import Navbar from "components/common/Navbar";
 import AppIcon from "components/common/AppIcon";
 import AboutMeCard from "components/tabs/AboutMeCard";
@@ -7,24 +7,18 @@ import ProjectsCard from "components/tabs/ProjectsCard";
 import VirusCard from "components/tabs/VirusCard";
 import ContactCard from "components/tabs/ContactCard";
 import SkillsCard from "components/tabs/SkillsCard";
-import { readFileSync } from "node:fs";
-import { background_code } from "public/backgroundCode";
+import { background_code } from "public/data/backgroundCode";
 
-type tab = "about" | "projects" | "skills" | "contact" | "virus" | undefined;
+type Tab = "about" | "projects" | "skills" | "contact" | "virus" | undefined;
 
 const Home = () => {
-  const [currentTab, setCurrentTab] = useState<tab>(undefined);
-  // const [backgroundCode, setBackgroundCode] = useState<string[]>([]);
-
-  // useEffect(() => {
-  //   const contents = readFileSync("public/background_code.txt", "utf-8");
-  //   const arr = contents.split(/\r?\n/);
-  //   setBackgroundCode(arr);
-  // }, []);
+  const [currentTab, setCurrentTab] = useState<Tab>(undefined);
 
   const handleGithubClicked = () => {
     window.open("https://github.com/dominikalk", "_blank");
   };
+
+  const backgroundCode = background_code.repeat(3).split(" ");
 
   return (
     <>
@@ -35,38 +29,57 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <p className="absolute inset-0 overflow-hidden font-fasthand text-white opacity-20 text-lg text-justify">
+        {/* <p className="absolute inset-0 overflow-hidden font-fasthand text-white opacity-20 text-lg text-justify">
           {background_code}
-        </p>
-        <div className="absolute inset-0 flex justify-center items-center">
-          {currentTab == "about" && (
+          {background_code}
+          {background_code}
+        </p> */}
+        <div className="absolute inset-0 overflow-hidden font-fasthand text-lg text-justify">
+          {backgroundCode.map((word: string, i: number) => (
+            <>
+              <span
+                key={word + i}
+                className="text-white opacity-20 hover:text-secondary hover:opacity-100"
+              >
+                {word}
+              </span>{" "}
+            </>
+          ))}
+        </div>
+        <div
+          className={`absolute inset-0 flex justify-center items-center ${
+            currentTab === undefined && "hidden"
+          }`}
+          onClick={() => setCurrentTab(undefined)}
+        >
+          {currentTab === "about" && (
             <AboutMeCard
               onClose={() => setCurrentTab(undefined)}
-              className="w-3/5 mb-20"
+              className="w-[800px] mb-20"
             />
           )}
-          {currentTab == "projects" && (
+          {currentTab === "projects" && (
             <ProjectsCard
               onClose={() => setCurrentTab(undefined)}
-              className="w-3/5 mb-20"
+              className="w-4/5 mb-20"
             />
           )}
-          {currentTab == "skills" && (
+          {currentTab === "skills" && (
             <SkillsCard
               onClose={() => setCurrentTab(undefined)}
-              className="w-3/5 mb-20"
+              className="w-[600px] mb-20"
             />
           )}
-          {currentTab == "contact" && (
+          {currentTab === "contact" && (
             <ContactCard
               onClose={() => setCurrentTab(undefined)}
-              className="w-3/5 mb-20"
+              className="w-[600px] mb-20"
             />
           )}
-          {currentTab == "virus" && (
+          {currentTab === "virus" && (
             <VirusCard
               onClose={() => setCurrentTab(undefined)}
-              className="w-2/5 mb-20"
+              className="w-[400px] mb-20"
             />
           )}
         </div>
@@ -74,43 +87,45 @@ const Home = () => {
         <div className="bg-dark w-full h-screen flex justify-center items-center">
           <div>
             <h1 className="text-primary text-center text-4xl mb-4 font-typewriter">
-              Hi! I'm Dominik
+              Hi! I&apos;m Dominik
             </h1>
-            <h3 className="text-white text-center text-2xl font-typewriter">
-              I'm a React and React native developer based in the UK
+            <h3 className="text-white text-center text-2xl font-typewriter px-8">
+              I&apos;m a React and React native developer based in the UK
             </h3>
           </div>
           <Navbar>
             <AppIcon
               name="About Me"
               icon="/icons/user.svg"
-              active={currentTab == "about"}
+              active={currentTab === "about"}
               onClick={() =>
-                setCurrentTab(currentTab == "about" ? undefined : "about")
+                setCurrentTab(currentTab === "about" ? undefined : "about")
               }
             />
             <AppIcon
               name="Projects"
               icon="/icons/code.svg"
-              active={currentTab == "projects"}
+              active={currentTab === "projects"}
               onClick={() =>
-                setCurrentTab(currentTab == "projects" ? undefined : "projects")
+                setCurrentTab(
+                  currentTab === "projects" ? undefined : "projects"
+                )
               }
             />
             <AppIcon
               name="Skills"
               icon="/icons/lightbulb.svg"
-              active={currentTab == "skills"}
+              active={currentTab === "skills"}
               onClick={() =>
-                setCurrentTab(currentTab == "skills" ? undefined : "skills")
+                setCurrentTab(currentTab === "skills" ? undefined : "skills")
               }
             />
             <AppIcon
               name="Contact"
               icon="/icons/envelope.svg"
-              active={currentTab == "contact"}
+              active={currentTab === "contact"}
               onClick={() =>
-                setCurrentTab(currentTab == "contact" ? undefined : "contact")
+                setCurrentTab(currentTab === "contact" ? undefined : "contact")
               }
             />
             <AppIcon
@@ -121,9 +136,9 @@ const Home = () => {
             <AppIcon
               name="Don't Click This"
               icon="/icons/question.svg"
-              active={currentTab == "virus"}
+              active={currentTab === "virus"}
               onClick={() =>
-                setCurrentTab(currentTab == "virus" ? undefined : "virus")
+                setCurrentTab(currentTab === "virus" ? undefined : "virus")
               }
             />
           </Navbar>

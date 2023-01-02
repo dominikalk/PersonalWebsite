@@ -4,8 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+div::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 @keyframes tab-open {

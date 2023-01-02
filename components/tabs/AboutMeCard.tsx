@@ -15,8 +15,8 @@ const AboutMeCard = ({ onClose, className }: AboutMeCardProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <div className="flex items-center">
-        <p className="w-2/5 text-white">
+      <div className="flex items-center flex-col md:flex-row">
+        <p className="w-full mb-4 md:w-2/5 md:mb-0  text-white">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facilis
           totam laudantium inventore velit. Qui, minus? Et, labore,
           necessitatibus quod debitis repudiandae quos veritatis dolores qui
@@ -27,7 +27,7 @@ const AboutMeCard = ({ onClose, className }: AboutMeCardProps) => {
         <Image
           src={profilePic}
           alt="Profile"
-          className="rounded-lg w-2/5 h-full object-cover ml-auto"
+          className="rounded-lg w-full md:w-2/5 h-full object-cover ml-auto"
         />
       </div>
     </Card>

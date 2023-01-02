@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "components/common/Card";
-import Image from "next/image";
-import profilePic from "public/images/profile.jpeg";
+import { projects } from "public/data/projects";
+import { Project } from "../../public/data/projects";
 
 type ProjectsCardProps = {
   onClose: () => void;
@@ -15,19 +15,21 @@ const ProjectsCard = ({ onClose, className }: ProjectsCardProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <p className="text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facilis
-        totam laudantium inventore velit. Qui, minus? Et, labore, necessitatibus
-        quod debitis repudiandae quos veritatis dolores qui nostrum illum
-        aperiam quas suscipit molestiae, tempora quae at facere? Asperiores eum
-        quas dolore ipsum suscipit delectus, vitae sint, doloribus aspernatur
-        quod, magnam quo! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Ad facilis totam laudantium inventore velit. Qui, minus? Et,
-        labore, necessitatibus quod debitis repudiandae quos veritatis dolores
-        qui nostrum illum aperiam quas suscipit molestiae, tempora quae at
-        facere? Asperiores eum quas dolore ipsum suscipit delectus, vitae sint,
-        doloribus aspernatur quod, magnam quo!
-      </p>
+      <div className="grid grid-cols-4 -m-4">
+        {projects.map((project: Project) => (
+          <div
+            key={project.title}
+            className="aspect-square flex items-center justify-center bg-no-repeat bg-cover bg-opacity-50"
+            style={{
+              backgroundImage: `url("${project.image}")`,
+              backgroundColor: "grey",
+              backgroundBlendMode: "multiply",
+            }}
+          >
+            <p className="text-white text-xl">{project.title}</p>
+          </div>
+        ))}
+      </div>
     </Card>
   );
 };

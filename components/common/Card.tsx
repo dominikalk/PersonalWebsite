@@ -9,7 +9,8 @@ type CardProps = {
 const Card = ({ title, text, children, onClose, className }: CardProps) => {
   return (
     <div
-      className={`bg-white bg-opacity-10 rounded-lg backdrop-blur-md max-h-[80%] max-w-[90%] overflow-scroll ${className}`}
+      onClick={(e) => e.stopPropagation()}
+      className={`bg-white bg-opacity-10 rounded-lg backdrop-blur-md max-h-[80%] max-w-[90%] overflow-scroll z-10 ${className}`}
     >
       <div className="flex items-center p-4 pb-3 sticky top-0 bg-[#414141]">
         <div className="flex group">
