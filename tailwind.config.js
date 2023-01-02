@@ -5,12 +5,22 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      // sans: ["Special Elite", "sans-serif"],
+      typewriter: ['"Special Elite"'],
+    },
     extend: {
       colors: {
-        dark: "#000000",
-        primary: "#FB2576",
-        secondary: "#3F0071",
-        tertiary: "#150050",
+        // dark: "#2b1f31",
+        dark: "#141414",
+        // dark2: "#32253c",
+        dark2: "#32253c",
+        primary: "#b002ff",
+        secondary: "#07ead9",
+        tertiary: "#705e97",
+        "mac-red": "#FF606C",
+        "mac-yellow": "#FFBD44",
+        "mac-green": "#00CA4E",
       },
     },
   },
