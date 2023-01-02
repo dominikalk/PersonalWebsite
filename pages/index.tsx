@@ -2,6 +2,8 @@ import Head from "next/head";
 import React from "react";
 import Wrapper from "components/common/Wrapper";
 import Card from "components/common/Card";
+import Image from "next/image";
+import profilePic from "public/images/profile.jpeg";
 
 const Home = () => {
   return (
@@ -31,8 +33,29 @@ const Home = () => {
         </div>
         {/* Secondary Page */}
         <div className="bg-dark2 w-full">
-          <Wrapper className="py-4">
-            <h3 className="text-2xl text-white">About Me</h3>
+          <Wrapper>
+            <div className="py-10 flex">
+              <div className="w-1/2 flex flex-col justify-center">
+                <h3 className="text-2xl text-white mb-4">About Me</h3>
+                <p className="text-white">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab
+                  exercitationem eaque voluptatem libero, totam voluptate
+                  accusamus nobis temporibus in atque tempore omnis animi cumque
+                  perspiciatis aut excepturi perferendis cum. Nesciunt omnis
+                  porro sed quo voluptatem fugit optio temporibus? Consequuntur
+                  pariatur sed obcaecati ex labore cupiditate nisi nemo totam
+                  temporibus sunt!
+                </p>
+              </div>
+              <div className="w-1/2">
+                <Image
+                  src={profilePic}
+                  alt="Profile"
+                  className="w-3/4 rounded-xl h-auto ml-auto"
+                />
+              </div>
+            </div>
+            {/* <div className="w-full py-10"></div> */}
           </Wrapper>
         </div>
       </main>
