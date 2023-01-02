@@ -1,14 +1,26 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "components/common/Navbar";
 import AppIcon from "components/common/AppIcon";
 import AboutMeCard from "components/tabs/AboutMeCard";
-import ProjectsCard from "../components/tabs/ProjectsCard";
+import ProjectsCard from "components/tabs/ProjectsCard";
+import VirusCard from "components/tabs/VirusCard";
+import ContactCard from "components/tabs/ContactCard";
+import SkillsCard from "components/tabs/SkillsCard";
+import { readFileSync } from "node:fs";
+import { background_code } from "public/backgroundCode";
 
 type tab = "about" | "projects" | "skills" | "contact" | "virus" | undefined;
 
 const Home = () => {
   const [currentTab, setCurrentTab] = useState<tab>(undefined);
+  // const [backgroundCode, setBackgroundCode] = useState<string[]>([]);
+
+  // useEffect(() => {
+  //   const contents = readFileSync("public/background_code.txt", "utf-8");
+  //   const arr = contents.split(/\r?\n/);
+  //   setBackgroundCode(arr);
+  // }, []);
 
   const handleGithubClicked = () => {
     window.open("https://github.com/dominikalk", "_blank");
@@ -23,6 +35,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <p className="absolute inset-0 overflow-hidden font-fasthand text-white opacity-20 text-lg text-justify">
+          {background_code}
+        </p>
         <div className="absolute inset-0 flex justify-center items-center">
           {currentTab == "about" && (
             <AboutMeCard
@@ -34,6 +49,24 @@ const Home = () => {
             <ProjectsCard
               onClose={() => setCurrentTab(undefined)}
               className="w-3/5 mb-20"
+            />
+          )}
+          {currentTab == "skills" && (
+            <SkillsCard
+              onClose={() => setCurrentTab(undefined)}
+              className="w-3/5 mb-20"
+            />
+          )}
+          {currentTab == "contact" && (
+            <ContactCard
+              onClose={() => setCurrentTab(undefined)}
+              className="w-3/5 mb-20"
+            />
+          )}
+          {currentTab == "virus" && (
+            <VirusCard
+              onClose={() => setCurrentTab(undefined)}
+              className="w-2/5 mb-20"
             />
           )}
         </div>

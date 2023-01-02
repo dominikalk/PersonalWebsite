@@ -8,6 +8,7 @@ module.exports = {
     fontFamily: {
       sans: ["Special Elite", "sans-serif"],
       typewriter: ['"Special Elite"'],
+      fasthand: ["Fasthand"],
     },
     extend: {
       colors: {
