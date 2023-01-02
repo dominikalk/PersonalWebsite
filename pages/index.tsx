@@ -1,11 +1,19 @@
 import Head from "next/head";
-import React from "react";
-import Wrapper from "components/common/Wrapper";
-import Card from "components/common/Card";
-import Image from "next/image";
-import profilePic from "public/images/profile.jpeg";
+import React, { useState } from "react";
+import Navbar from "components/common/Navbar";
+import AppIcon from "components/common/AppIcon";
+import AboutMeCard from "components/tabs/AboutMeCard";
+import ProjectsCard from "../components/tabs/ProjectsCard";
+
+type tab = "about" | "projects" | "skills" | "contact" | "virus" | undefined;
 
 const Home = () => {
+  const [currentTab, setCurrentTab] = useState<tab>(undefined);
+
+  const handleGithubClicked = () => {
+    window.open("https://github.com/dominikalk", "_blank");
+  };
+
   return (
     <>
       <Head>
@@ -15,11 +23,20 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* <Card
-          title="Title"
-          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quae doloremque, dolorum temporibus labore assumenda quam sit iste saepe ipsam."
-          className="w-80"
-        /> */}
+        <div className="absolute inset-0 flex justify-center items-center">
+          {currentTab == "about" && (
+            <AboutMeCard
+              onClose={() => setCurrentTab(undefined)}
+              className="w-3/5 mb-20"
+            />
+          )}
+          {currentTab == "projects" && (
+            <ProjectsCard
+              onClose={() => setCurrentTab(undefined)}
+              className="w-3/5 mb-20"
+            />
+          )}
+        </div>
         {/* Front Page */}
         <div className="bg-dark w-full h-screen flex justify-center items-center">
           <div>
@@ -30,33 +47,53 @@ const Home = () => {
               I'm a React and React native developer based in the UK
             </h3>
           </div>
-        </div>
-        {/* Secondary Page */}
-        <div className="bg-dark2 w-full">
-          <Wrapper>
-            <div className="py-10 flex">
-              <div className="w-1/2 flex flex-col justify-center">
-                <h3 className="text-2xl text-white mb-4">About Me</h3>
-                <p className="text-white">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab
-                  exercitationem eaque voluptatem libero, totam voluptate
-                  accusamus nobis temporibus in atque tempore omnis animi cumque
-                  perspiciatis aut excepturi perferendis cum. Nesciunt omnis
-                  porro sed quo voluptatem fugit optio temporibus? Consequuntur
-                  pariatur sed obcaecati ex labore cupiditate nisi nemo totam
-                  temporibus sunt!
-                </p>
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src={profilePic}
-                  alt="Profile"
-                  className="w-3/4 rounded-xl h-auto ml-auto"
-                />
-              </div>
-            </div>
-            {/* <div className="w-full py-10"></div> */}
-          </Wrapper>
+          <Navbar>
+            <AppIcon
+              name="About Me"
+              icon="/icons/user.svg"
+              active={currentTab == "about"}
+              onClick={() =>
+                setCurrentTab(currentTab == "about" ? undefined : "about")
+              }
+            />
+            <AppIcon
+              name="Projects"
+              icon="/icons/code.svg"
+              active={currentTab == "projects"}
+              onClick={() =>
+                setCurrentTab(currentTab == "projects" ? undefined : "projects")
+              }
+            />
+            <AppIcon
+              name="Skills"
+              icon="/icons/lightbulb.svg"
+              active={currentTab == "skills"}
+              onClick={() =>
+                setCurrentTab(currentTab == "skills" ? undefined : "skills")
+              }
+            />
+            <AppIcon
+              name="Contact"
+              icon="/icons/envelope.svg"
+              active={currentTab == "contact"}
+              onClick={() =>
+                setCurrentTab(currentTab == "contact" ? undefined : "contact")
+              }
+            />
+            <AppIcon
+              name="GitHub"
+              icon="/icons/github.svg"
+              onClick={() => handleGithubClicked()}
+            />
+            <AppIcon
+              name="Don't Click This"
+              icon="/icons/question.svg"
+              active={currentTab == "virus"}
+              onClick={() =>
+                setCurrentTab(currentTab == "virus" ? undefined : "virus")
+              }
+            />
+          </Navbar>
         </div>
       </main>
     </>

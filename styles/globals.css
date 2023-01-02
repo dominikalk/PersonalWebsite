@@ -6,3 +6,20 @@
 body {
   margin: 0;
 }
+
+@keyframes tab-open {
+  0% {
+    transform: scale(0) translateY(-100%);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    transform-origin: bottom;
+  }
+}
+
+.tab-animation {
+  animation-name: tab-open;
+  animation-duration: 1s;
+  transform-origin: bottom;
+}
