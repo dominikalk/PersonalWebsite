@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     title: "BeePro",
     description: "",
-    image: "https://www.beepro.com/hubfs/Hiverly/BeePro-Logo-Text-Right.svg",
+    image: "https://www.beepro.com/hubfs/BeePro/BeePro-Logo-Text-Centre.svg",
   },
   {
     title: "LimeLight",

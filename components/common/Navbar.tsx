@@ -1,11 +1,66 @@
+import { Tab } from "pages/index";
+import { Dispatch, SetStateAction } from "react";
+import AppIcon from "components/common/AppIcon";
+
 type NavbarProps = {
-  children: React.ReactNode;
+  currentTab: Tab;
+  setCurrentTab: Dispatch<SetStateAction<Tab>>;
 };
 
-const Navbar = ({ children }: NavbarProps) => {
+const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
+  const handleGithubClicked = () => {
+    window.open("https://github.com/dominikalk", "_blank");
+  };
+
   return (
-    <div className="fixed bottom-0 mb-4 min-w-[40px] h-16 rounded-2xl p-2.5 bg-white bg-opacity-20 gap-x-4 flex">
-      {children}
+    <div className="fixed bottom-0 w-full flex justify-center z-20">
+      <div className="mb-4 min-w-[40px] h-16 rounded-2xl p-2.5 bg-white bg-opacity-20 gap-x-4 flex">
+        <AppIcon
+          name="About Me"
+          icon="/icons/user.svg"
+          active={currentTab === "about"}
+          onClick={() =>
+            setCurrentTab(currentTab === "about" ? undefined : "about")
+          }
+        />
+        <AppIcon
+          name="Projects"
+          icon="/icons/code.svg"
+          active={currentTab === "projects"}
+          onClick={() =>
+            setCurrentTab(currentTab === "projects" ? undefined : "projects")
+          }
+        />
+        <AppIcon
+          name="Skills"
+          icon="/icons/lightbulb.svg"
+          active={currentTab === "skills"}
+          onClick={() =>
+            setCurrentTab(currentTab === "skills" ? undefined : "skills")
+          }
+        />
+        <AppIcon
+          name="Contact Me"
+          icon="/icons/envelope.svg"
+          active={currentTab === "contact"}
+          onClick={() =>
+            setCurrentTab(currentTab === "contact" ? undefined : "contact")
+          }
+        />
+        <AppIcon
+          name="GitHub"
+          icon="/icons/github.svg"
+          onClick={() => handleGithubClicked()}
+        />
+        <AppIcon
+          name="Don't Click This"
+          icon="/icons/question.svg"
+          active={currentTab === "virus"}
+          onClick={() =>
+            setCurrentTab(currentTab === "virus" ? undefined : "virus")
+          }
+        />
+      </div>
     </div>
   );
 };

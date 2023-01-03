@@ -10,19 +10,24 @@ const Card = ({ title, text, children, onClose, className }: CardProps) => {
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className={`bg-white bg-opacity-10 rounded-lg backdrop-blur-md max-h-[80%] max-w-[90%] overflow-scroll z-10 ${className}`}
+      className={`bg-white bg-opacity-10 rounded-lg backdrop-blur-md max-h-[80%] max-w-[90%] overflow-scroll z-20 ${className}`}
     >
       <div className="flex items-center p-4 pb-3 sticky top-0 bg-[#414141]">
         <div className="flex group">
           <div
-            className={`rounded-full w-3 h-3 mr-2 bg-mac-red flex justify-center items-center`}
+            className="flex items-center justify-center w-5 h-5 -m-1 mr-1"
             onClick={onClose}
           >
-            <img
-              src="/icons/x.svg"
-              alt="cross"
-              className="w-2.5 h-2.5 hidden group-hover:block"
-            />
+            <div
+              className={`rounded-full w-3 h-3 bg-mac-red flex justify-center items-center`}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/icons/x.svg"
+                alt="cross"
+                className="w-2.5 h-2.5 md:hidden md:group-hover:block"
+              />
+            </div>
           </div>
           <div className={`rounded-full w-3 h-3 mr-2 bg-mac-yellow`} />
           <div className={`rounded-full w-3 h-3 bg-mac-green`} />

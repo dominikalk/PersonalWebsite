@@ -15,11 +15,11 @@ const ProjectsCard = ({ onClose, className }: ProjectsCardProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <div className="grid grid-cols-4 -m-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 -m-4">
         {projects.map((project: Project) => (
           <div
             key={project.title}
-            className="aspect-square flex items-center justify-center bg-no-repeat bg-cover bg-opacity-50"
+            className="aspect-square flex items-center justify-center bg-no-repeat bg-cover bg-center"
             style={{
               backgroundImage: `url("${project.image}")`,
               backgroundColor: "grey",
