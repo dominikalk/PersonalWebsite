@@ -1,7 +1,4 @@
-import React from "react";
 import Card from "components/common/Card";
-import Image from "next/image";
-import profilePic from "public/images/profile.jpeg";
 
 type VirusCardProps = {
   onClose: () => void;
@@ -17,7 +14,7 @@ const VirusCard = ({ onClose, className }: VirusCardProps) => {
     >
       <p className="text-white">
         Your computer has been locked and encrypted! To unlock it and get all
-        your data back hire Dominik.
+        your data back hire Dominik. (Or find the antivirus software).
       </p>
     </Card>
   );

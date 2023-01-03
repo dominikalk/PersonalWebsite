@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { Tab } from "pages/index";
 import AboutMeCard from "components/tabs/AboutMeCard";
 import ProjectsCard from "components/tabs/ProjectsCard";

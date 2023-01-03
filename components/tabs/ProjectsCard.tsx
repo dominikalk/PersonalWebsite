@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "components/common/Card";
 import { projects } from "public/data/projects";
 import { Project } from "../../public/data/projects";
@@ -19,14 +18,16 @@ const ProjectsCard = ({ onClose, className }: ProjectsCardProps) => {
         {projects.map((project: Project) => (
           <div
             key={project.title}
-            className="aspect-square flex items-center justify-center bg-no-repeat bg-cover bg-center"
+            className="aspect-square flex items-center justify-center bg-no-repeat bg-cover bg-center hover:brightness-125 group"
             style={{
               backgroundImage: `url("${project.image}")`,
               backgroundColor: "grey",
               backgroundBlendMode: "multiply",
             }}
           >
-            <p className="text-white text-xl">{project.title}</p>
+            <p className="text-white text-xl group-hover:text-2xl">
+              {project.title}
+            </p>
           </div>
         ))}
       </div>

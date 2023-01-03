@@ -1,7 +1,5 @@
 import React from "react";
 import Card from "components/common/Card";
-import Image from "next/image";
-import profilePic from "public/images/profile.jpeg";
 
 type SkillsCardProps = {
   onClose: () => void;
