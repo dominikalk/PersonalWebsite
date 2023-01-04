@@ -10,6 +10,8 @@ export type Tab =
   | "skills"
   | "contact"
   | "virus"
+  | "games"
+  | "stats"
   | undefined;
 
 const Home = () => {

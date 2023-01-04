@@ -16,6 +16,12 @@ export const projects: Project[] = [
       "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
   },
   {
+    title: "Bother",
+    description: "",
+    image:
+      "https://media.licdn.com/dms/image/C4D0BAQFhpMnvZJFe9Q/company-logo_200_200/0/1587145431048?e=2147483647&v=beta&t=87Mg0DzIKyaz75lMbHYGqH0zWLX4Q9MCSSMnJKFNPHU",
+  },
+  {
     title: "Uplevyl",
     description: "",
     image:
@@ -31,12 +37,6 @@ export const projects: Project[] = [
     description: "",
     image:
       "https://cdn.jim-nielsen.com/ios/512/lime-your-ride-anytime-2019-07-29.png",
-  },
-  {
-    title: "Bother",
-    description: "",
-    image:
-      "https://media.licdn.com/dms/image/C4D0BAQFhpMnvZJFe9Q/company-logo_200_200/0/1587145431048?e=2147483647&v=beta&t=87Mg0DzIKyaz75lMbHYGqH0zWLX4Q9MCSSMnJKFNPHU",
   },
   {
     title: "EvoSim",

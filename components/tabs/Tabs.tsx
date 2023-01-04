@@ -5,6 +5,8 @@ import ProjectsCard from "components/tabs/ProjectsCard";
 import VirusCard from "components/tabs/VirusCard";
 import ContactCard from "components/tabs/ContactCard";
 import SkillsCard from "components/tabs/SkillsCard";
+import GamesCard from "components/tabs/GamesCard";
+import StatsCard from "components/tabs/StatsCard";
 
 type TabsProps = {
   currentTab: Tab;
@@ -45,6 +47,18 @@ const Tabs = ({ currentTab, setCurrentTab }: TabsProps) => {
       )}
       {currentTab === "virus" && (
         <VirusCard
+          onClose={() => setCurrentTab(undefined)}
+          className="w-[400px] mb-20"
+        />
+      )}
+      {currentTab === "games" && (
+        <GamesCard
+          onClose={() => setCurrentTab(undefined)}
+          className="w-[400px] mb-20"
+        />
+      )}
+      {currentTab === "stats" && (
+        <StatsCard
           onClose={() => setCurrentTab(undefined)}
           className="w-[400px] mb-20"
         />

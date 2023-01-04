@@ -48,6 +48,22 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
           }
         />
         <AppIcon
+          name="Games"
+          icon="/icons/gamepad.svg"
+          active={currentTab === "games"}
+          onClick={() =>
+            setCurrentTab(currentTab === "games" ? undefined : "games")
+          }
+        />
+        <AppIcon
+          name="Statistics"
+          icon="/icons/graph.svg"
+          active={currentTab === "stats"}
+          onClick={() =>
+            setCurrentTab(currentTab === "stats" ? undefined : "stats")
+          }
+        />
+        <AppIcon
           name="GitHub"
           icon="/icons/github.svg"
           onClick={() => handleGithubClicked()}
