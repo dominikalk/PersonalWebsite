@@ -9,7 +9,7 @@ const AppIcon = ({ name, icon, active, onClick }: AppIconProps) => {
   return (
     <div
       onClick={onClick}
-      className="bg-white rounded-lg h-11 w-11 flex justify-center items-center relative group active:brightness-75"
+      className="bg-white rounded-lg h-11 w-11 flex justify-center items-center relative group active:brightness-75 cursor-pointer"
     >
       <div className="absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 text-white whitespace-nowrap hidden md:group-hover:block">
         {name}

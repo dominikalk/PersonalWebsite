@@ -30,7 +30,7 @@ const Tabs = ({ currentTab, setCurrentTab }: TabsProps) => {
       {currentTab === "projects" && (
         <ProjectsCard
           onClose={() => setCurrentTab(undefined)}
-          className="w-[90%] md:w-4/5 mb-20"
+          className="w-[90%] md:w-3/5 mb-20"
         />
       )}
       {currentTab === "skills" && (
@@ -54,7 +54,7 @@ const Tabs = ({ currentTab, setCurrentTab }: TabsProps) => {
       {currentTab === "games" && (
         <GamesCard
           onClose={() => setCurrentTab(undefined)}
-          className="w-[400px] mb-20"
+          className="w-[600px] mb-20"
         />
       )}
       {currentTab === "stats" && (

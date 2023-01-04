@@ -17,22 +17,22 @@ const StatsCard = ({ onClose, className }: StatsCardProps) => {
       <StatRow
         title="Commits (Last Year)"
         value="1k"
-        icon="/icons/commit.svg"
+        icon="/icons/commit-white.svg"
       />
       <StatRow
         title="Pull Requests Opened"
         value="532"
-        icon="/icons/pull-request.svg"
+        icon="/icons/pull-request-white.svg"
       />
       <StatRow
         title="Itch.io Game Views"
         value="4k"
-        icon="/icons/itch-io.svg"
+        icon="/icons/itch-io-white.svg"
       />
       <StatRow
         title="Itch.io Game Downloads"
         value="500"
-        icon="/icons/download.svg"
+        icon="/icons/download-white.svg"
         className="mb-0"
       />
     </Card>

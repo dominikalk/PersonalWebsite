@@ -12,10 +12,10 @@ const Card = ({ title, text, children, onClose, className }: CardProps) => {
       onClick={(e) => e.stopPropagation()}
       className={`bg-white bg-opacity-10 rounded-lg backdrop-blur-md max-h-[80%] max-w-[90%] overflow-scroll z-20 ${className}`}
     >
-      <div className="flex items-center p-4 pb-3 sticky top-0 bg-[#414141]">
+      <div className="flex items-center p-4 pb-3 sticky top-0 bg-[#414141] z-30">
         <div className="flex group">
           <div
-            className="flex items-center justify-center w-5 h-5 -m-1 mr-1"
+            className="flex items-center justify-center w-5 h-5 -m-1 mr-1 cursor-pointer"
             onClick={onClose}
           >
             <div
