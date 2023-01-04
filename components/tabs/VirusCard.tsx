@@ -12,7 +12,7 @@ const VirusCard = ({ onClose, className }: VirusCardProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <p className="text-white">
+      <p>
         Your computer has been locked and encrypted! To unlock it and get all
         your data back hire Dominik. (Or find the antivirus software).
       </p>

@@ -12,7 +12,7 @@ const ContactCard = ({ onClose, className }: ContactCardProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <p className="text-white text-2xl text-center my-20">Coming Soon ...</p>
+      <p className="text-2xl text-center my-20">Coming Soon ...</p>
     </Card>
   );
 };

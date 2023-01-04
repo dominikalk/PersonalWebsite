@@ -15,7 +15,7 @@ const AboutMeCard = ({ onClose, className }: AboutMeCardProps) => {
       className={`tab-animation ${className}`}
     >
       <div className="flex items-center flex-col md:flex-row gap-8">
-        <div className="w-full mb-4 md:w-3/5 md:mb-0  text-white">
+        <div className="w-full mb-4 md:w-3/5 md:mb-0">
           <p>Hi! I&apos;m Dominik</p>
           <p>
             I&apos;m a React and React Native developer based in the UK and have

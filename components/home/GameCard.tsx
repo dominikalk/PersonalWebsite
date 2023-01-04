@@ -1,4 +1,5 @@
 import LabeledIcon from "./LabeledIcon";
+import Image from "next/image";
 
 type GameCardProps = {
   title: string;
@@ -21,11 +22,12 @@ const GameCard = ({
 }: GameCardProps) => {
   return (
     <div className={className}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={image}
         alt={title}
         className="w-full aspect-[63/50] rounded-lg"
+        width={280}
+        height={220}
       />
       <div className="flex justify-center gap-3 mt-3">
         {!!play && (
@@ -38,7 +40,7 @@ const GameCard = ({
           />
         )}
         {github && (
-          <a href={github} target="_blank">
+          <a href={github} target="_blank" rel="noreferrer">
             <LabeledIcon
               icon="/icons/github-white.svg"
               label="Github Repository"
@@ -46,7 +48,7 @@ const GameCard = ({
           </a>
         )}
         {itch && (
-          <a href={itch} target="_blank">
+          <a href={itch} target="_blank" rel="noreferrer">
             <LabeledIcon
               icon="/icons/itch-io-white.svg"
               label="Itch.io Game Link"

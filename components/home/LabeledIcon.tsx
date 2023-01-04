@@ -16,7 +16,7 @@ const LabeledIcon = ({
       className="group relative flex justify-center cursor-pointer"
       onClick={onClick}
     >
-      <div className="absolute top-0 -mt-14 bg-[#414141] border-white border rounded-md p-1 px-2 text-white whitespace-nowrap hidden md:group-hover:block">
+      <div className="absolute top-0 -mt-14 bg-[#414141] border-white border rounded-md p-1 px-2 whitespace-nowrap hidden md:group-hover:block">
         {label}
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}

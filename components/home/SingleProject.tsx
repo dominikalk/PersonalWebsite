@@ -29,8 +29,8 @@ const SingleProject = ({
           height={400}
         />
         <div className="w-2/3">
-          <h1 className="text-2xl text-white mb-4">{project.title}</h1>
-          <p className="text-lg text-white">{project.description}</p>
+          <h1 className="text-2xl mb-4">{project.title}</h1>
+          <p className="text-lg">{project.description}</p>
         </div>
       </div>
     </div>

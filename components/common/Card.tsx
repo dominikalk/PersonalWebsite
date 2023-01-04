@@ -32,10 +32,10 @@ const Card = ({ title, text, children, onClose, className }: CardProps) => {
           <div className={`rounded-full w-3 h-3 mr-2 bg-mac-yellow`} />
           <div className={`rounded-full w-3 h-3 bg-mac-green`} />
         </div>
-        {title && <h2 className="text-2xl text-white ml-4">{title}</h2>}
+        {title && <h2 className="text-2xl ml-4">{title}</h2>}
       </div>
       <div className="p-4">
-        {text && <p className="text-white">{text}</p>}
+        {text && <p>{text}</p>}
         {children && children}
       </div>
     </div>

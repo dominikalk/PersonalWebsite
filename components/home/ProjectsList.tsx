@@ -19,7 +19,7 @@ const ProjectsList = ({ setCurrentProject }: ProjectsListProps) => {
             backgroundBlendMode: "multiply",
           }}
         >
-          <p className="text-white text-center text-xl group-hover:text-2xl">
+          <p className="text-center text-xl group-hover:text-2xl">
             {project.title}
           </p>
         </div>

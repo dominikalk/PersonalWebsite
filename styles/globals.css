@@ -32,6 +32,14 @@ body {
   transform-origin: bottom;
 }
 
+h1,
+h2,
+h3,
+div,
+p {
+  color: white;
+}
+
 a {
   color: #07ead9;
 }
