@@ -1,4 +1,4 @@
-import LabeledIcon from "./LabeledIcon";
+import ToolTipIcon from "./ToolTipIcon";
 import Image from "next/image";
 
 type GameCardProps = {
@@ -31,17 +31,17 @@ const GameCard = ({
       />
       <div className="flex justify-center gap-3 mt-3">
         {!!play && (
-          <LabeledIcon icon="/icons/play-white.svg" label="Play In Browser" />
+          <ToolTipIcon icon="/icons/play-white.svg" label="Play In Browser" />
         )}
         {!!download && (
-          <LabeledIcon
+          <ToolTipIcon
             icon="/icons/download-white.svg"
             label="Download Standalone"
           />
         )}
         {github && (
           <a href={github} target="_blank" rel="noreferrer">
-            <LabeledIcon
+            <ToolTipIcon
               icon="/icons/github-white.svg"
               label="Github Repository"
             />
@@ -49,7 +49,7 @@ const GameCard = ({
         )}
         {itch && (
           <a href={itch} target="_blank" rel="noreferrer">
-            <LabeledIcon
+            <ToolTipIcon
               icon="/icons/itch-io-white.svg"
               label="Itch.io Game Link"
             />

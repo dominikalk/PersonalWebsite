@@ -1,15 +1,15 @@
 import React from "react";
-import Card from "components/common/Card";
+import Tab from "components/common/Tab";
 import StatRow from "components/home/StatRow";
 
-type StatsCardProps = {
+type StatsTabProps = {
   onClose: () => void;
   className: string;
 };
 
-const StatsCard = ({ onClose, className }: StatsCardProps) => {
+const StatsTab = ({ onClose, className }: StatsTabProps) => {
   return (
-    <Card
+    <Tab
       title="Statistics"
       onClose={onClose}
       className={`tab-animation ${className}`}
@@ -35,8 +35,8 @@ const StatsCard = ({ onClose, className }: StatsCardProps) => {
         icon="/icons/download-white.svg"
         className="mb-0"
       />
-    </Card>
+    </Tab>
   );
 };
 
-export default StatsCard;
+export default StatsTab;

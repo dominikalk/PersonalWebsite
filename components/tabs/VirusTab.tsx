@@ -1,13 +1,13 @@
-import Card from "components/common/Card";
+import Tab from "components/common/Tab";
 
-type VirusCardProps = {
+type VirusTabProps = {
   onClose: () => void;
   className: string;
 };
 
-const VirusCard = ({ onClose, className }: VirusCardProps) => {
+const VirusTab = ({ onClose, className }: VirusTabProps) => {
   return (
-    <Card
+    <Tab
       title="You have a virus!!!"
       onClose={onClose}
       className={`tab-animation ${className}`}
@@ -16,8 +16,8 @@ const VirusCard = ({ onClose, className }: VirusCardProps) => {
         Your computer has been locked and encrypted! To unlock it and get all
         your data back hire Dominik. (Or find the antivirus software).
       </p>
-    </Card>
+    </Tab>
   );
 };
 
-export default VirusCard;
+export default VirusTab;

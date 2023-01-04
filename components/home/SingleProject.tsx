@@ -20,15 +20,15 @@ const SingleProject = ({
         height={32}
         onClick={closeCurrentProject}
       />
-      <div className="flex gap-8">
+      <div className="flex flex-col md:flex-row gap-8">
         <Image
           src={project.image}
           alt="project thumbnail"
-          className="w-1/3 rounded-lg"
+          className="md:w-1/3 rounded-lg"
           width={400}
           height={400}
         />
-        <div className="w-2/3">
+        <div className="md:w-2/3">
           <h1 className="text-2xl mb-4">{project.title}</h1>
           <p className="text-lg">{project.description}</p>
         </div>

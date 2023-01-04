@@ -1,16 +1,16 @@
-type LabeledIconProps = {
+type ToolTipIconProps = {
   icon: string;
   label: string;
   onClick?: () => void;
   size?: "small" | "large";
 };
 
-const LabeledIcon = ({
+const ToolTipIcon = ({
   icon,
   label,
   size = "small",
   onClick,
-}: LabeledIconProps) => {
+}: ToolTipIconProps) => {
   return (
     <div
       className="group relative flex justify-center cursor-pointer"
@@ -25,4 +25,4 @@ const LabeledIcon = ({
   );
 };
 
-export default LabeledIcon;
+export default ToolTipIcon;

@@ -1,21 +1,21 @@
-import Card from "components/common/Card";
+import Tab from "components/common/Tab";
 import ProjectsList from "components/home/ProjectsList";
 import SingleProject from "components/home/SingleProject";
 import { Project } from "public/data/projects";
 import { useState } from "react";
 
-type ProjectsCardProps = {
+type ProjectsTabProps = {
   onClose: () => void;
   className: string;
 };
 
-const ProjectsCard = ({ onClose, className }: ProjectsCardProps) => {
+const ProjectsTab = ({ onClose, className }: ProjectsTabProps) => {
   const [currentProject, setCurrentProject] = useState<Project | undefined>(
     undefined
   );
 
   return (
-    <Card
+    <Tab
       title="Projects"
       onClose={onClose}
       className={`tab-animation ${className}`}
@@ -28,8 +28,8 @@ const ProjectsCard = ({ onClose, className }: ProjectsCardProps) => {
           closeCurrentProject={() => setCurrentProject(undefined)}
         />
       )}
-    </Card>
+    </Tab>
   );
 };
 
-export default ProjectsCard;
+export default ProjectsTab;

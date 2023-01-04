@@ -12,6 +12,7 @@ export type Tab =
   | "virus"
   | "games"
   | "stats"
+  | "all"
   | undefined;
 
 const Home = () => {

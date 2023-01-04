@@ -1,12 +1,13 @@
 import { Dispatch, SetStateAction } from "react";
 import { Tab } from "pages/index";
-import AboutMeCard from "components/tabs/AboutMeCard";
-import ProjectsCard from "components/tabs/ProjectsCard";
-import VirusCard from "components/tabs/VirusCard";
-import ContactCard from "components/tabs/ContactCard";
-import SkillsCard from "components/tabs/SkillsCard";
-import GamesCard from "components/tabs/GamesCard";
-import StatsCard from "components/tabs/StatsCard";
+import AboutMeTab from "components/tabs/AboutMeTab";
+import ProjectsTab from "components/tabs/ProjectsTab";
+import VirusTab from "components/tabs/VirusTab";
+import ContactTab from "components/tabs/ContactTab";
+import SkillsTab from "components/tabs/SkillsTab";
+import GamesTab from "components/tabs/GamesTab";
+import StatsTab from "components/tabs/StatsTab";
+import AllTab from "components/tabs/AllTab";
 
 type TabsProps = {
   currentTab: Tab;
@@ -22,45 +23,52 @@ const Tabs = ({ currentTab, setCurrentTab }: TabsProps) => {
       onClick={() => setCurrentTab(undefined)}
     >
       {currentTab === "about" && (
-        <AboutMeCard
+        <AboutMeTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[800px] mb-20"
+          className="w-[800px]"
         />
       )}
       {currentTab === "projects" && (
-        <ProjectsCard
+        <ProjectsTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[90%] md:w-3/5 mb-20"
+          className="w-[90%] md:w-3/5"
         />
       )}
       {currentTab === "skills" && (
-        <SkillsCard
+        <SkillsTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[600px] mb-20"
+          className="w-[600px]"
         />
       )}
       {currentTab === "contact" && (
-        <ContactCard
+        <ContactTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[600px] mb-20"
+          className="w-[600px]"
         />
       )}
       {currentTab === "virus" && (
-        <VirusCard
+        <VirusTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[400px] mb-20"
+          className="w-[400px]"
         />
       )}
       {currentTab === "games" && (
-        <GamesCard
+        <GamesTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[600px] mb-20"
+          className="w-[600px]"
         />
       )}
       {currentTab === "stats" && (
-        <StatsCard
+        <StatsTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[400px] mb-20"
+          className="w-[400px]"
+        />
+      )}
+      {currentTab === "all" && (
+        <AllTab
+          onClose={() => setCurrentTab(undefined)}
+          setCurrentTab={setCurrentTab}
+          className="w-[340px]"
         />
       )}
     </div>

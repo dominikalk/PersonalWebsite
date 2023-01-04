@@ -1,21 +1,21 @@
 import React from "react";
-import Card from "components/common/Card";
+import Tab from "components/common/Tab";
 
-type SkillsCardProps = {
+type SkillsTabProps = {
   onClose: () => void;
   className: string;
 };
 
-const SkillsCard = ({ onClose, className }: SkillsCardProps) => {
+const SkillsTab = ({ onClose, className }: SkillsTabProps) => {
   return (
-    <Card
+    <Tab
       title="Skills"
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
       <p className="text-2xl text-center my-20">Coming Soon ...</p>
-    </Card>
+    </Tab>
   );
 };
 
-export default SkillsCard;
+export default SkillsTab;

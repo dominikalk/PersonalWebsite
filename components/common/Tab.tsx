@@ -1,4 +1,4 @@
-type CardProps = {
+type TabProps = {
   title?: string;
   text?: string;
   children?: React.ReactNode;
@@ -6,11 +6,11 @@ type CardProps = {
   className: string;
 };
 
-const Card = ({ title, text, children, onClose, className }: CardProps) => {
+const Tab = ({ title, text, children, onClose, className }: TabProps) => {
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className={`bg-white bg-opacity-10 rounded-lg backdrop-blur-md max-h-[80%] max-w-[90%] overflow-scroll z-20 ${className}`}
+      className={`bg-white bg-opacity-10 rounded-lg backdrop-blur-md max-h-[80%] max-w-[90%] overflow-scroll z-20 mb-20 ${className}`}
     >
       <div className="flex items-center p-4 pb-3 sticky top-0 bg-[#414141] z-30">
         <div className="flex group">
@@ -42,4 +42,4 @@ const Card = ({ title, text, children, onClose, className }: CardProps) => {
   );
 };
 
-export default Card;
+export default Tab;

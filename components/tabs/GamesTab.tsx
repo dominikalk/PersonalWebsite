@@ -1,21 +1,21 @@
 import React from "react";
-import Card from "components/common/Card";
-import GameCard from "components/home/GameCard";
+import Tab from "components/common/Tab";
+import GameTab from "components/home/GameCard";
 
-type GamesCardProps = {
+type GamesTabProps = {
   onClose: () => void;
   className: string;
 };
 
-const GamesCard = ({ onClose, className }: GamesCardProps) => {
+const GamesTab = ({ onClose, className }: GamesTabProps) => {
   return (
-    <Card
+    <Tab
       title="Games"
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
       <div className="flex gap-4 flex-col min-[525px]:flex-row">
-        <GameCard
+        <GameTab
           title="EvoSim"
           image="https://img.itch.zone/aW1nLzMxOTk2OTIucG5n/315x250%23c/fLN0ip.png"
           download={() => {}}
@@ -23,7 +23,7 @@ const GamesCard = ({ onClose, className }: GamesCardProps) => {
           itch="https://dominikalk.itch.io/evosim"
           className="min-[525px]:w-1/2"
         />
-        <GameCard
+        <GameTab
           title="Pack Yak Bandit"
           image="https://img.itch.zone/aW1nLzMzNzk4MjcucG5n/315x250%23c/zEXlqN.png"
           play={() => {}}
@@ -33,8 +33,8 @@ const GamesCard = ({ onClose, className }: GamesCardProps) => {
           className="min-[525px]:w-1/2"
         />
       </div>
-    </Card>
+    </Tab>
   );
 };
 
-export default GamesCard;
+export default GamesTab;

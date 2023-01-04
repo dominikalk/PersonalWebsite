@@ -1,6 +1,7 @@
 import { Tab } from "pages/index";
 import { Dispatch, SetStateAction } from "react";
 import AppIcon from "components/common/AppIcon";
+import { useWindowSize } from "../../helpers/hooks/useWindowResize";
 
 type NavbarProps = {
   currentTab: Tab;
@@ -8,10 +9,13 @@ type NavbarProps = {
 };
 
 const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
+  const size = useWindowSize();
+
   const handleGithubClicked = () => {
     window.open("https://github.com/dominikalk", "_blank");
   };
 
+  if (!size.width) return null;
   return (
     <div className="fixed bottom-0 w-full flex justify-center z-20">
       <div className="mb-4 min-w-[40px] h-16 rounded-2xl p-2.5 bg-white bg-opacity-20 gap-x-4 flex">
@@ -47,35 +51,48 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
             setCurrentTab(currentTab === "contact" ? undefined : "contact")
           }
         />
-        <AppIcon
-          name="Games"
-          icon="/icons/gamepad.svg"
-          active={currentTab === "games"}
-          onClick={() =>
-            setCurrentTab(currentTab === "games" ? undefined : "games")
-          }
-        />
-        <AppIcon
-          name="Statistics"
-          icon="/icons/graph.svg"
-          active={currentTab === "stats"}
-          onClick={() =>
-            setCurrentTab(currentTab === "stats" ? undefined : "stats")
-          }
-        />
-        <AppIcon
-          name="GitHub Link"
-          icon="/icons/github.svg"
-          onClick={() => handleGithubClicked()}
-        />
-        <AppIcon
-          name="Don't Click This"
-          icon="/icons/question.svg"
-          active={currentTab === "virus"}
-          onClick={() =>
-            setCurrentTab(currentTab === "virus" ? undefined : "virus")
-          }
-        />
+        {size.width >= 640 ? (
+          <>
+            <AppIcon
+              name="Games"
+              icon="/icons/gamepad.svg"
+              active={currentTab === "games"}
+              onClick={() =>
+                setCurrentTab(currentTab === "games" ? undefined : "games")
+              }
+            />
+            <AppIcon
+              name="Statistics"
+              icon="/icons/graph.svg"
+              active={currentTab === "stats"}
+              onClick={() =>
+                setCurrentTab(currentTab === "stats" ? undefined : "stats")
+              }
+            />
+            <AppIcon
+              name="GitHub Link"
+              icon="/icons/github.svg"
+              onClick={() => handleGithubClicked()}
+            />
+            <AppIcon
+              name="Don't Click This"
+              icon="/icons/question.svg"
+              active={currentTab === "virus"}
+              onClick={() =>
+                setCurrentTab(currentTab === "virus" ? undefined : "virus")
+              }
+            />
+          </>
+        ) : (
+          <AppIcon
+            name="Apps"
+            icon="/icons/ellipsis.svg"
+            active={currentTab === "all"}
+            onClick={() =>
+              setCurrentTab(currentTab === "all" ? undefined : "all")
+            }
+          />
+        )}
       </div>
     </div>
   );

@@ -1,20 +1,20 @@
-import Card from "components/common/Card";
+import Tab from "components/common/Tab";
 
-type ContactCardProps = {
+type ContactTabProps = {
   onClose: () => void;
   className: string;
 };
 
-const ContactCard = ({ onClose, className }: ContactCardProps) => {
+const ContactTab = ({ onClose, className }: ContactTabProps) => {
   return (
-    <Card
+    <Tab
       title="Contact Me"
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
       <p className="text-2xl text-center my-20">Coming Soon ...</p>
-    </Card>
+    </Tab>
   );
 };
 
-export default ContactCard;
+export default ContactTab;
