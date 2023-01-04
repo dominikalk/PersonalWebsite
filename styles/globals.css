@@ -31,3 +31,7 @@ body {
   animation-duration: 1s;
   transform-origin: bottom;
 }
+
+a {
+  color: #07ead9;
+}

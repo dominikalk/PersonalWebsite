@@ -64,7 +64,7 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
           }
         />
         <AppIcon
-          name="GitHub"
+          name="GitHub Link"
           icon="/icons/github.svg"
           onClick={() => handleGithubClicked()}
         />

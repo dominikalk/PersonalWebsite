@@ -14,15 +14,30 @@ const AboutMeCard = ({ onClose, className }: AboutMeCardProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <div className="flex items-center flex-col md:flex-row">
-        <p className="w-full mb-4 md:w-2/5 md:mb-0  text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facilis
-          totam laudantium inventore velit. Qui, minus? Et, labore,
-          necessitatibus quod debitis repudiandae quos veritatis dolores qui
-          nostrum illum aperiam quas suscipit molestiae, tempora quae at facere?
-          Asperiores eum quas dolore ipsum suscipit delectus, vitae sint,
-          doloribus aspernatur quod, magnam quo!
-        </p>
+      <div className="flex items-center flex-col md:flex-row gap-8">
+        <div className="w-full mb-4 md:w-3/5 md:mb-0  text-white">
+          <p>Hi! I&apos;m Dominik</p>
+          <p>
+            I&apos;m a React and React Native developer based in the UK and have
+            been employed at{" "}
+            <a href="https://3sidedcube.com/" target="_blank" rel="noreferrer">
+              3 Sided Cube
+            </a>{" "}
+            and their sister company since October 2019 as a mid-level
+            developer. Previously I had a work experience placement at{" "}
+            <a href="https://www.amuzo.com/" target="_blank" rel="noreferrer">
+              Amuzo
+            </a>{" "}
+            developing games with the Unity game engine and have been developing
+            personal games since. As well as developing web apps and games in my
+            free time, I am studying Computer Science at Cardiff University and
+            will graduate in 2024. My goal in Web and App Development is to
+            create clean and efficient code bases as to reduce the probability
+            of bugs being incorporated and I&apos;m also looking into getting
+            into full-stack development, hence why I&apos;m currently teaching
+            myself NestJS.
+          </p>
+        </div>
         <Image
           src={profilePic}
           alt="Profile"
