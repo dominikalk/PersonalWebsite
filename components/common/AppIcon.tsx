@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ScrambleText from "components/common/ScrambleText";
+import { isDesktop } from "react-device-detect";
 
 type AppIconProps = {
   name: string;
@@ -24,7 +25,9 @@ const AppIcon = ({
       {labelType === "hover" && (
         <ScrambleText
           as="div"
-          className="absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 whitespace-nowrap hidden md:group-hover:block"
+          className={`absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 whitespace-nowrap hidden ${
+            isDesktop ? "group-hover:block" : ""
+          }`}
         >
           {name}
         </ScrambleText>
