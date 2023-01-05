@@ -28,7 +28,7 @@ const AppIcon = ({
       <div
         className={`bg-white rounded-lg ${
           labelType === "hover" ? "h-11 w-11" : "h-16 w-16"
-        } flex justify-center items-center group-active:brightness-75`}
+        } flex justify-center items-center cursor-pointer group-active:brightness-75`}
       >
         <Image
           src={icon}
