@@ -1,7 +1,7 @@
 import { Tab } from "pages/index";
 import { Dispatch, SetStateAction } from "react";
 import AppIcon from "components/common/AppIcon";
-import { useWindowSize } from "../../helpers/hooks/useWindowResize";
+import { useWindowSize } from "hooks/useWindowResize";
 
 type NavbarProps = {
   currentTab: Tab;

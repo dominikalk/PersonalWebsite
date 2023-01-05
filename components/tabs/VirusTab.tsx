@@ -14,7 +14,7 @@ const VirusTab = ({ onClose, className }: VirusTabProps) => {
     >
       <p>
         Your computer has been locked and encrypted! To unlock it and get all
-        your data back hire Dominik. (Or find the antivirus software).
+        your data back, hire Dominik. (Or find the antivirus software).
       </p>
     </Tab>
   );

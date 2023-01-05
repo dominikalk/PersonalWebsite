@@ -52,7 +52,7 @@ const ContactTab = ({ onClose, setCurrentTab, className }: ContactTabProps) => {
           labelType="visible"
         />
         <AppIcon
-          name="Statistics"
+          name="Stats"
           icon="/icons/graph.svg"
           onClick={() => setCurrentTab("stats")}
           labelType="visible"

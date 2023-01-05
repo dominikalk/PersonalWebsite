@@ -1,4 +1,6 @@
 import Image from "next/image";
+import React from "react";
+import ScrambleText from "components/common/ScrambleText";
 
 type AppIconProps = {
   name: string;
@@ -21,9 +23,12 @@ const AppIcon = ({
       className="flex flex-col items-center justify-center relative group"
     >
       {labelType === "hover" && (
-        <div className="absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 whitespace-nowrap hidden md:group-hover:block">
+        <ScrambleText
+          as="div"
+          className="absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 whitespace-nowrap hidden md:group-hover:block"
+        >
           {name}
-        </div>
+        </ScrambleText>
       )}
       <div
         className={`bg-white rounded-lg ${
