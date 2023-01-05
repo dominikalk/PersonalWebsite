@@ -25,9 +25,7 @@ const AppIcon = ({
       {labelType === "hover" && (
         <ScrambleText
           as="div"
-          className={`absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 whitespace-nowrap hidden ${
-            isDesktop ? "group-hover:block" : ""
-          }`}
+          className="absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 whitespace-nowrap hidden group-hover:block"
         >
           {name}
         </ScrambleText>

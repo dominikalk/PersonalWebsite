@@ -21,7 +21,7 @@ const HomeBackground = () => {
           </>
         ))}
       </div> */}
-      <div className="relative z-10 w-full h-screen flex justify-center items-center">
+      <div className="relative z-10 w-full h-screen flex justify-center items-center pb-20">
         <div>
           <ScrambleText
             as="h1"
