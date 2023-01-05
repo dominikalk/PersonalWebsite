@@ -1,4 +1,3 @@
-import React from "react";
 import Tab from "components/common/Tab";
 import ScrambleText from "components/common/ScrambleText";
 

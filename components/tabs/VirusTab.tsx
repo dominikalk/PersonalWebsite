@@ -1,5 +1,5 @@
 import Tab from "components/common/Tab";
-import { useHomeContext } from "components/home/home.provider";
+import { useHomeContext } from "providers/home.provider";
 import { useEffect } from "react";
 
 type VirusTabProps = {

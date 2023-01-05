@@ -1,4 +1,4 @@
-import { useHomeContext } from "components/home/home.provider";
+import { useHomeContext } from "providers/home.provider";
 import { scrambleText } from "helpers/scrambleText";
 import { ElementType } from "react";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import Tab from "components/common/Tab";
 import GameTab from "components/home/GameCard";
 

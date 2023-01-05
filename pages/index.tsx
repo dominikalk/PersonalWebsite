@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import Navbar from "components/common/Navbar";
 import Tabs from "components/tabs/Tabs";
 import HomeBackground from "components/home/HomeBackground";
-import HomeProvider from "components/home/home.provider";
+import HomeProvider from "providers/home.provider";
 
 export type Tab =
   | "about"
