@@ -1,5 +1,6 @@
 import React from "react";
 import Tab from "components/common/Tab";
+import ScrambleText from "components/common/ScrambleText";
 
 type SkillsTabProps = {
   onClose: () => void;
@@ -13,7 +14,9 @@ const SkillsTab = ({ onClose, className }: SkillsTabProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <p className="text-2xl text-center my-20">Coming Soon ...</p>
+      <ScrambleText as="p" className="text-2xl text-center my-20">
+        Coming Soon ...
+      </ScrambleText>
     </Tab>
   );
 };

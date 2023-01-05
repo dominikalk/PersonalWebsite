@@ -1,3 +1,4 @@
+import ScrambleText from "components/common/ScrambleText";
 import { Project, projects } from "public/data/projects";
 import { Dispatch, SetStateAction } from "react";
 
@@ -19,9 +20,12 @@ const ProjectsList = ({ setCurrentProject }: ProjectsListProps) => {
             backgroundBlendMode: "multiply",
           }}
         >
-          <p className="text-center text-xl group-hover:text-2xl">
+          <ScrambleText
+            as="p"
+            className="text-center text-xl group-hover:text-2xl"
+          >
             {project.title}
-          </p>
+          </ScrambleText>
         </div>
       ))}
     </div>

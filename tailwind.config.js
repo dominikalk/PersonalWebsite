@@ -20,6 +20,9 @@ module.exports = {
         "mac-yellow": "#FFBD44",
         "mac-green": "#00CA4E",
       },
+      screens: {
+        xs: "481px",
+      },
     },
   },
   plugins: [],

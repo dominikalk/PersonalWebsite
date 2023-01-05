@@ -1,3 +1,4 @@
+import ScrambleText from "components/common/ScrambleText";
 import Tab from "components/common/Tab";
 
 type ContactTabProps = {
@@ -12,7 +13,9 @@ const ContactTab = ({ onClose, className }: ContactTabProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <p className="text-2xl text-center my-20">Coming Soon ...</p>
+      <ScrambleText as="p" className="text-2xl text-center my-20">
+        Coming Soon ...
+      </ScrambleText>
     </Tab>
   );
 };

@@ -1,4 +1,6 @@
 import Tab from "components/common/Tab";
+import { useHomeContext } from "components/home/home.provider";
+import { useEffect } from "react";
 
 type VirusTabProps = {
   onClose: () => void;
@@ -6,9 +8,15 @@ type VirusTabProps = {
 };
 
 const VirusTab = ({ onClose, className }: VirusTabProps) => {
+  const { isTextScrambled, setIsTextScrambled } = useHomeContext();
+  useEffect(() => {
+    setIsTextScrambled(!isTextScrambled);
+  }, []);
+
   return (
     <Tab
       title="You have a virus!!!"
+      scrambleTitle={false}
       onClose={onClose}
       className={`tab-animation ${className}`}
     >

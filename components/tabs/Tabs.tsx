@@ -31,7 +31,7 @@ const Tabs = ({ currentTab, setCurrentTab }: TabsProps) => {
       {currentTab === "projects" && (
         <ProjectsTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[90%] md:w-3/5"
+          className="w-[90%] lg:w-3/5"
         />
       )}
       {currentTab === "skills" && (

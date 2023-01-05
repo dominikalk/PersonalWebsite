@@ -50,9 +50,12 @@ const AppIcon = ({
           }`}
         />
       ) : (
-        <p className="w-16 h-9 text-center mt-2 overflow-hidden text-ellipsis text-sm">
+        <ScrambleText
+          as="p"
+          className="w-16 h-9 text-center mt-2 overflow-hidden text-ellipsis text-sm"
+        >
           {name}
-        </p>
+        </ScrambleText>
       )}
     </div>
   );

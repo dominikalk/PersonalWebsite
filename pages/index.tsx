@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "components/common/Navbar";
 import Tabs from "components/tabs/Tabs";
 import HomeBackground from "components/home/HomeBackground";
+import HomeProvider from "components/home/home.provider";
 
 export type Tab =
   | "about"
@@ -19,7 +20,7 @@ const Home = () => {
   const [currentTab, setCurrentTab] = useState<Tab>(undefined);
 
   return (
-    <>
+    <HomeProvider>
       <Head>
         <title>dominikalk</title>
         <meta
@@ -34,7 +35,7 @@ const Home = () => {
         <HomeBackground />
         <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
       </main>
-    </>
+    </HomeProvider>
   );
 };
 

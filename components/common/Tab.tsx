@@ -1,12 +1,20 @@
+import ScrambleText from "components/common/ScrambleText";
+
 type TabProps = {
-  title?: string;
-  text?: string;
-  children?: React.ReactNode;
+  title: string;
   onClose: () => void;
-  className: string;
+  children?: React.ReactNode;
+  scrambleTitle?: boolean;
+  className?: string;
 };
 
-const Tab = ({ title, text, children, onClose, className }: TabProps) => {
+const Tab = ({
+  title,
+  onClose,
+  children,
+  scrambleTitle,
+  className,
+}: TabProps) => {
   return (
     <div
       onClick={(e) => e.stopPropagation()}
@@ -32,12 +40,17 @@ const Tab = ({ title, text, children, onClose, className }: TabProps) => {
           <div className={`rounded-full w-3 h-3 mr-2 bg-mac-yellow`} />
           <div className={`rounded-full w-3 h-3 bg-mac-green`} />
         </div>
-        {title && <h2 className="text-2xl ml-4">{title}</h2>}
+        {title && (
+          <ScrambleText
+            scramble={scrambleTitle}
+            as="h2"
+            className="text-2xl ml-4"
+          >
+            {title}
+          </ScrambleText>
+        )}
       </div>
-      <div className="p-4">
-        {text && <p>{text}</p>}
-        {children && children}
-      </div>
+      <div className="p-4">{children && children}</div>
     </div>
   );
 };
