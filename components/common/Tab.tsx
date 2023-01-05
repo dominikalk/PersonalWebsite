@@ -1,4 +1,6 @@
 import ScrambleText from "components/common/ScrambleText";
+import Image from "next/image";
+import { isDesktop } from "react-device-detect";
 
 type TabProps = {
   title: string;
@@ -29,11 +31,14 @@ const Tab = ({
             <div
               className={`rounded-full w-3 h-3 bg-mac-red flex justify-center items-center`}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/icons/x.svg"
                 alt="cross"
-                className="w-2.5 h-2.5 md:hidden md:group-hover:block"
+                className={`w-2.5 h-2.5 md:hidden ${
+                  isDesktop ? "group-hover:block" : ""
+                }`}
+                width={10}
+                height={10}
               />
             </div>
           </div>

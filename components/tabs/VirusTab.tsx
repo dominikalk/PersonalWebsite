@@ -11,6 +11,7 @@ const VirusTab = ({ onClose, className }: VirusTabProps) => {
   const { isTextScrambled, setIsTextScrambled } = useHomeContext();
   useEffect(() => {
     setIsTextScrambled(!isTextScrambled);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

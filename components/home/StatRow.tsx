@@ -1,4 +1,5 @@
 import ScrambleText from "components/common/ScrambleText";
+import Image from "next/image";
 
 type StatRowProps = {
   title: string;
@@ -10,8 +11,13 @@ type StatRowProps = {
 const StatRow = ({ title, value, icon, className }: StatRowProps) => {
   return (
     <div className={`flex align-center mb-4 ${className}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={icon} alt={`${title} icon`} className="w-6 h-6 mr-4" />
+      <Image
+        src={icon}
+        alt={`${title} icon`}
+        className="w-6 h-6 mr-4"
+        width={24}
+        height={24}
+      />
       <ScrambleText as="span">{`${title}: ${value}`}</ScrambleText>
     </div>
   );
