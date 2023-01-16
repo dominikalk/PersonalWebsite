@@ -59,7 +59,7 @@ export async function getStaticProps() {
   let itchViews: undefined | number = undefined;
   let itchDownloads: undefined | number = undefined;
 
-  if (itchData) {
+  if (itchData && itchRes.status === 200) {
     itchViews = 0;
     itchDownloads = 0;
     itchData.games.forEach((game: any) => {
