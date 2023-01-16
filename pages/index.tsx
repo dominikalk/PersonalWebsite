@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Navbar from "components/common/Navbar";
 import Tabs from "components/tabs/Tabs";
 import HomeBackground from "components/home/HomeBackground";
-import HomeProvider from "providers/home.provider";
+import { useHomeContext } from "providers/home.provider";
 
 export type Tab =
   | "about"
@@ -16,11 +16,22 @@ export type Tab =
   | "all"
   | undefined;
 
-const Home = () => {
+type HomeProps = {
+  itchViews: number | undefined;
+  itchDownloads: number | undefined;
+};
+
+const Home = ({ itchViews, itchDownloads }: HomeProps) => {
   const [currentTab, setCurrentTab] = useState<Tab>(undefined);
+  const { setStats } = useHomeContext();
+
+  useEffect(() => {
+    setStats({ itchViews, itchDownloads });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <HomeProvider>
+    <>
       <Head>
         <title>dominikalk</title>
         <meta
@@ -35,8 +46,34 @@ const Home = () => {
         <HomeBackground />
         <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
       </main>
-    </HomeProvider>
+    </>
   );
 };
+
+export async function getStaticProps() {
+  const itchRes = await fetch(
+    `${process.env.ITCH_IO_API_URL}${process.env.ITCH_IO_API_KEY}/my-games`
+  );
+  const itchData = await itchRes.json();
+
+  let itchViews: undefined | number = undefined;
+  let itchDownloads: undefined | number = undefined;
+
+  if (itchData) {
+    itchViews = 0;
+    itchDownloads = 0;
+    itchData.games.forEach((game: any) => {
+      itchViews += game.views_count;
+      itchDownloads += game.downloads_count;
+    });
+  }
+
+  return {
+    props: {
+      itchViews,
+      itchDownloads,
+    }, // will be passed to the page component as props
+  };
+}
 
 export default Home;

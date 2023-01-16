@@ -1,5 +1,6 @@
 import Tab from "components/common/Tab";
 import StatRow from "components/home/StatRow";
+import { useHomeContext } from "providers/home.provider";
 
 type StatsTabProps = {
   onClose: () => void;
@@ -7,6 +8,8 @@ type StatsTabProps = {
 };
 
 const StatsTab = ({ onClose, className }: StatsTabProps) => {
+  const { stats } = useHomeContext();
+
   return (
     <Tab
       title="Statistics"
@@ -23,17 +26,21 @@ const StatsTab = ({ onClose, className }: StatsTabProps) => {
         value="532"
         icon="/icons/pull-request-white.svg"
       />
-      <StatRow
-        title="Itch.io Game Views"
-        value="4k"
-        icon="/icons/itch-io-white.svg"
-      />
-      <StatRow
-        title="Itch.io Game Downloads"
-        value="500"
-        icon="/icons/download-white.svg"
-        className="mb-0"
-      />
+      {stats.itchViews && (
+        <StatRow
+          title="Itch.io Game Views"
+          value={stats.itchViews.toString()}
+          icon="/icons/itch-io-white.svg"
+        />
+      )}
+      {stats.itchDownloads && (
+        <StatRow
+          title="Itch.io Game Downloads"
+          value={stats.itchDownloads.toString()}
+          icon="/icons/download-white.svg"
+          className="mb-0"
+        />
+      )}
     </Tab>
   );
 };
