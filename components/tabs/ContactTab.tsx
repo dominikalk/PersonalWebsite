@@ -1,5 +1,5 @@
-import ScrambleText from "components/common/ScrambleText";
 import Tab from "components/common/Tab";
+import ToolTipIcon from "components/home/ToolTipIcon";
 
 type ContactTabProps = {
   onClose: () => void;
@@ -13,9 +13,28 @@ const ContactTab = ({ onClose, className }: ContactTabProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <ScrambleText as="p" className="text-2xl text-center my-20">
-        Coming Soon ...
-      </ScrambleText>
+      <div className="flex justify-center py-14 gap-6">
+        <ToolTipIcon
+          icon="/icons/envelope-white.svg"
+          label="Email"
+          size="large"
+        />
+        <ToolTipIcon
+          icon="/icons/linkedin-white.svg"
+          label="LinkedIn"
+          size="large"
+        />
+        <ToolTipIcon
+          icon="/icons/github-white.svg"
+          label="GitHub"
+          size="large"
+        />
+        <ToolTipIcon
+          icon="/icons/itch-io-white.svg"
+          label="Itch.io"
+          size="large"
+        />
+      </div>
     </Tab>
   );
 };

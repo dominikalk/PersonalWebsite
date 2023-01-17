@@ -5,10 +5,16 @@ import Image from "next/image";
 type ToolTipIconProps = {
   icon: string;
   label: string;
+  size?: "small" | "large";
   onClick?: () => void;
 };
 
-const ToolTipIcon = ({ icon, label, onClick }: ToolTipIconProps) => {
+const ToolTipIcon = ({
+  icon,
+  label,
+  size = "small",
+  onClick,
+}: ToolTipIconProps) => {
   return (
     <div
       className="group relative flex justify-center cursor-pointer"
@@ -25,9 +31,9 @@ const ToolTipIcon = ({ icon, label, onClick }: ToolTipIconProps) => {
       <Image
         src={icon}
         alt={label}
-        className="w-7 h-7"
-        width={28}
-        height={28}
+        className={`${size === "small" ? "w-7 h-7" : "w-10 h-10"}`}
+        width={size === "small" ? 28 : 40}
+        height={size === "small" ? 28 : 40}
       />
     </div>
   );
