@@ -50,19 +50,29 @@ const Home = ({ itchViews, itchDownloads }: HomeProps) => {
   );
 };
 
-export async function getStaticProps() {
+type Game = {
+  views_count: number;
+  downloads_count: number;
+};
+
+async function getGames(): Promise<Game[] | null> {
   const itchRes = await fetch(
     `${process.env.ITCH_IO_API_URL}${process.env.ITCH_IO_API_KEY}/my-games`
   );
   const itchData = await itchRes.json();
 
-  let itchViews: undefined | number = undefined;
-  let itchDownloads: undefined | number = undefined;
+  if (itchData && itchRes.status === 200) return itchData.games;
+  return null;
+}
 
-  if (itchData && itchRes.status === 200) {
-    itchViews = 0;
-    itchDownloads = 0;
-    itchData.games.forEach((game: any) => {
+export async function getStaticProps() {
+  const itchData = await getGames();
+
+  let itchViews: number = 0;
+  let itchDownloads: number = 0;
+
+  if (itchData) {
+    itchData.forEach((game: Game) => {
       itchViews += game.views_count;
       itchDownloads += game.downloads_count;
     });
@@ -70,9 +80,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-      itchViews,
-      itchDownloads,
-    }, // will be passed to the page component as props
+      itchViews: !itchViews ? undefined : itchViews,
+      itchDownloads: !itchDownloads ? undefined : itchDownloads,
+    },
   };
 }
 
