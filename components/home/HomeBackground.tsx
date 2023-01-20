@@ -2,13 +2,14 @@ import ScrambleText from "components/common/ScrambleText";
 import { background_code } from "public/data/backgroundCode";
 
 const HomeBackground = () => {
-  const backgroundCode = background_code.repeat(3).split(" ");
+  // const backgroundCode = background_code.repeat(3).split(" ");
 
   return (
     <>
       <p className="absolute inset-0 overflow-hidden font-fasthand opacity-20 text-lg text-justify">
         {background_code.repeat(3)}
       </p>
+      {/* Map each word and add hover effect */}
       {/* <div className="absolute inset-0 overflow-hidden font-fasthand text-lg text-justify">
         {backgroundCode.map((word: string, i: number) => (
           <>
