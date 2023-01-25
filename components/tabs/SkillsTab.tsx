@@ -1,5 +1,5 @@
 import Tab from "components/common/Tab";
-import ScrambleText from "components/common/ScrambleText";
+import RotatingSkill from "components/home/RotatingSkill";
 
 type SkillsTabProps = {
   onClose: () => void;
@@ -13,9 +13,48 @@ const SkillsTab = ({ onClose, className }: SkillsTabProps) => {
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
-      <ScrambleText as="p" className="text-2xl text-center my-20">
-        Coming Soon ...
-      </ScrambleText>
+      <div className="w-full aspect-square flex justify-center items-center skills-rotate ">
+        <RotatingSkill
+          icon="/icons/git.svg"
+          initRotation={0}
+          onClick={() => {}}
+        />
+        <RotatingSkill
+          icon="/icons/html.svg"
+          initRotation={45}
+          onClick={() => {}}
+        />
+        <RotatingSkill
+          icon="/icons/javascript.svg"
+          initRotation={90}
+          onClick={() => {}}
+        />
+        <RotatingSkill
+          icon="/icons/react.svg"
+          initRotation={135}
+          onClick={() => {}}
+        />
+        <RotatingSkill
+          icon="/icons/css.svg"
+          initRotation={180}
+          onClick={() => {}}
+        />
+        <RotatingSkill
+          icon="/icons/github.svg"
+          initRotation={225}
+          onClick={() => {}}
+        />
+        <RotatingSkill
+          icon="/icons/gamepad.svg"
+          initRotation={270}
+          onClick={() => {}}
+        />
+        <RotatingSkill
+          icon="/icons/graph.svg"
+          initRotation={315}
+          onClick={() => {}}
+        />
+      </div>
     </Tab>
   );
 };

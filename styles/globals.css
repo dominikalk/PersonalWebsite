@@ -32,6 +32,33 @@ body {
   transform-origin: bottom;
 }
 
+@keyframes skills-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.skills-rotate {
+  transform-origin: center;
+  animation: skills-rotation 16s infinite linear;
+}
+
+@keyframes skills-rotation-negate {
+  from {
+    transform: rotate(359deg) translateX(220px);
+  }
+  to {
+    transform: rotate(0deg) translateX(220px);
+  }
+}
+
+.skills-rotate-negate {
+  animation: skills-rotation-negate 16s infinite linear;
+}
+
 h1,
 h2,
 h3,
