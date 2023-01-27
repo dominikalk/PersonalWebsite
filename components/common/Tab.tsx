@@ -8,6 +8,7 @@ type TabProps = {
   children?: React.ReactNode;
   scrambleTitle?: boolean;
   className?: string;
+  containerClassName?: string;
 };
 
 const Tab = ({
@@ -16,6 +17,7 @@ const Tab = ({
   children,
   scrambleTitle,
   className,
+  containerClassName,
 }: TabProps) => {
   return (
     <div
@@ -55,7 +57,7 @@ const Tab = ({
           </ScrambleText>
         )}
       </div>
-      <div className="p-4">{children && children}</div>
+      <div className={`p-4 ${containerClassName}`}>{children && children}</div>
     </div>
   );
 };

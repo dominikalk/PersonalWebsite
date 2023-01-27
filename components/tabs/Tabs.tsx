@@ -43,7 +43,7 @@ const Tabs = ({ currentTab, setCurrentTab }: TabsProps) => {
       {currentTab === "contact" && (
         <ContactTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[600px]"
+          className="w-[400px]"
         />
       )}
       {currentTab === "virus" && (

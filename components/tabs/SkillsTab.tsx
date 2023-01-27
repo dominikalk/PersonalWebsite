@@ -1,78 +1,111 @@
 import Tab from "components/common/Tab";
 import PointerPrompt from "components/home/PointerPrompt";
 import RotatingSkill from "components/home/RotatingSkill";
+import SelectedSkill from "components/home/SelectedSkill";
+import { useWindowSize } from "hooks/useWindowResize";
+import { useHomeContext } from "providers/home.provider";
+import { useEffect } from "react";
 
 type SkillsTabProps = {
   onClose: () => void;
   className: string;
 };
 
-type RotatingSkillType = {
+type SkillName =
+  | "Git"
+  | "HTML"
+  | "JavaScript & TypeScript"
+  | "React"
+  | "CSS"
+  | "GitHub";
+
+export type Skill = {
   icon: string;
-  name: string;
+  name: SkillName;
   description: string;
 };
 
-const rotatingSkills: RotatingSkillType[] = [
+const skills: Skill[] = [
   {
-    icon: "icons/git.svg",
+    icon: "icons/git-white.svg",
     name: "Git",
-    description: "Git Description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis minima alias tempora? Qui repellendus quaerat rem. Officia illo veritatis et!",
   },
   {
-    icon: "icons/html.svg",
+    icon: "icons/html-white.svg",
     name: "HTML",
-    description: "HTML Description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis minima alias tempora? Qui repellendus quaerat rem. Officia illo veritatis et!",
   },
   {
-    icon: "icons/javascript.svg",
+    icon: "icons/javascript-white.svg",
     name: "JavaScript & TypeScript",
-    description: "JS & TS Description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis minima alias tempora? Qui repellendus quaerat rem. Officia illo veritatis et!",
   },
   {
-    icon: "icons/react.svg",
+    icon: "icons/react-white.svg",
     name: "React",
-    description: "React Description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis minima alias tempora? Qui repellendus quaerat rem. Officia illo veritatis et!",
   },
   {
-    icon: "icons/css.svg",
+    icon: "icons/css-white.svg",
     name: "CSS",
-    description: "CSS Description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis minima alias tempora? Qui repellendus quaerat rem. Officia illo veritatis et!",
   },
   {
-    icon: "icons/github.svg",
+    icon: "icons/github-white.svg",
     name: "GitHub",
-    description: "GitHub Description",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis minima alias tempora? Qui repellendus quaerat rem. Officia illo veritatis et!",
   },
-  {
-    icon: "icons/gamepad.svg",
-    name: "Test",
-    description: "Test Description",
-  },
-  {
-    icon: "icons/graph.svg",
-    name: "Test",
-    description: "Test Description",
-  },
+  // {
+  //   icon: "icons/gamepad.svg",
+  //   name: "Test",
+  //   description: "Test Description",
+  // },
+  // {
+  //   icon: "icons/graph.svg",
+  //   name: "Test",
+  //   description: "Test Description",
+  // },
 ];
 
 const SkillsTab = ({ onClose, className }: SkillsTabProps) => {
+  const { selectedSkill, setSelectedSkill } = useHomeContext();
+  const size = useWindowSize();
+
+  useEffect(() => {
+    setSelectedSkill(undefined);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Tab
       title="Skills"
       onClose={onClose}
       className={`tab-animation ${className}`}
+      containerClassName="overflow-hidden"
     >
       <div className="flex flex-col justify-center items-center absolute w-full aspect-square -m-4">
-        <PointerPrompt />
+        {selectedSkill ? (
+          <SelectedSkill {...selectedSkill} />
+        ) : (
+          <PointerPrompt />
+        )}
       </div>
       <div className="w-full aspect-square flex justify-center items-center skills-rotate">
-        {rotatingSkills.map((rotatingSkill: RotatingSkillType, i: number) => (
+        {skills.map((skill: Skill, i: number) => (
           <RotatingSkill
-            icon={rotatingSkill.icon}
-            initRotation={i * (360 / rotatingSkills.length)}
-            onClick={() => {}}
-            key={rotatingSkill.name}
+            icon={skill.icon}
+            initRotation={i * (360 / skills.length)}
+            onClick={() => {
+              setSelectedSkill(skill);
+            }}
+            key={skill.name}
           />
         ))}
       </div>

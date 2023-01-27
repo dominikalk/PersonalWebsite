@@ -10,7 +10,7 @@ type NavbarProps = {
 };
 
 const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
-  const { isTextScrambled } = useHomeContext();
+  const { isTextScrambled, setIsTextScrambled } = useHomeContext();
   const size = useWindowSize();
 
   const handleGithubClicked = () => {
@@ -63,6 +63,16 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
                 setCurrentTab(currentTab === "games" ? undefined : "games")
               }
             />
+            {isTextScrambled && (
+              <AppIcon
+                name="Antivirus"
+                icon="/icons/antivirus.svg"
+                onClick={() => {
+                  setCurrentTab(currentTab === "virus" ? undefined : "virus");
+                  setIsTextScrambled(false);
+                }}
+              />
+            )}
             <AppIcon
               name="Statistics"
               icon="/icons/graph.svg"
@@ -76,16 +86,16 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
               icon="/icons/github.svg"
               onClick={() => handleGithubClicked()}
             />
-            <AppIcon
-              name={isTextScrambled ? "Antivirus" : "Don't Click This"}
-              icon={
-                isTextScrambled ? "icons/antivirus.svg" : "/icons/question.svg"
-              }
-              active={currentTab === "virus"}
-              onClick={() =>
-                setCurrentTab(currentTab === "virus" ? undefined : "virus")
-              }
-            />
+            {!isTextScrambled && (
+              <AppIcon
+                name="Don't Click This"
+                icon="/icons/question.svg"
+                onClick={() => {
+                  setCurrentTab(currentTab === "virus" ? undefined : "virus");
+                  setIsTextScrambled(true);
+                }}
+              />
+            )}
           </>
         ) : (
           <AppIcon

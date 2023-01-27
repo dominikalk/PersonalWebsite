@@ -11,7 +11,7 @@ type ContactTabProps = {
 };
 
 const ContactTab = ({ onClose, setCurrentTab, className }: ContactTabProps) => {
-  const { isTextScrambled } = useHomeContext();
+  const { isTextScrambled, setIsTextScrambled } = useHomeContext();
 
   const handleGithubClicked = () => {
     window.open("https://github.com/dominikalk", "_blank");
@@ -54,6 +54,17 @@ const ContactTab = ({ onClose, setCurrentTab, className }: ContactTabProps) => {
           onClick={() => setCurrentTab("games")}
           labelType="visible"
         />
+        {isTextScrambled && (
+          <AppIcon
+            name="Anti Virus"
+            icon="/icons/antivirus.svg"
+            onClick={() => {
+              setCurrentTab("virus");
+              setIsTextScrambled(false);
+            }}
+            labelType="visible"
+          />
+        )}
         <AppIcon
           name="Stats"
           icon="/icons/graph.svg"
@@ -66,12 +77,17 @@ const ContactTab = ({ onClose, setCurrentTab, className }: ContactTabProps) => {
           onClick={() => handleGithubClicked()}
           labelType="visible"
         />
-        <AppIcon
-          name={isTextScrambled ? "Anti Virus" : "Don't Click This"}
-          icon={isTextScrambled ? "icons/antivirus.svg" : "/icons/question.svg"}
-          onClick={() => setCurrentTab("virus")}
-          labelType="visible"
-        />
+        {!isTextScrambled && (
+          <AppIcon
+            name="Don't Click This"
+            icon="/icons/question.svg"
+            onClick={() => {
+              setCurrentTab("virus");
+              setIsTextScrambled(true);
+            }}
+            labelType="visible"
+          />
+        )}
       </div>
     </Tab>
   );

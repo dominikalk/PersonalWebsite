@@ -1,6 +1,5 @@
 import Tab from "components/common/Tab";
 import { useHomeContext } from "providers/home.provider";
-import { useEffect } from "react";
 
 type VirusTabProps = {
   onClose: () => void;
@@ -8,22 +7,19 @@ type VirusTabProps = {
 };
 
 const VirusTab = ({ onClose, className }: VirusTabProps) => {
-  const { isTextScrambled, setIsTextScrambled } = useHomeContext();
-  useEffect(() => {
-    setIsTextScrambled(!isTextScrambled);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { isTextScrambled } = useHomeContext();
 
   return (
     <Tab
-      title="You have a virus!!!"
+      title={isTextScrambled ? "You have a virus!!!" : "You found the it!!!"}
       scrambleTitle={false}
       onClose={onClose}
       className={`tab-animation ${className}`}
     >
       <p>
-        Your computer has been locked and encrypted! To unlock it and get all
-        your data back, hire Dominik. (Or find the antivirus software).
+        {isTextScrambled
+          ? "Your computer has been locked and encrypted! To unlock it and get all your data back, hire Dominik. (Or find the antivirus software)."
+          : "All of the data on your computer has been decrypted."}
       </p>
     </Tab>
   );
