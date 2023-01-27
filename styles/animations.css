@@ -1,0 +1,66 @@
+/* Opening Tab Animation */
+@keyframes tab-open {
+  0% {
+    transform: scale(0) translateY(-100%);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    transform-origin: bottom;
+  }
+}
+
+.tab-animation {
+  animation-name: tab-open;
+  animation-duration: 1s;
+  transform-origin: bottom;
+}
+
+/* Rotate Skills About Point Clockwise */
+@keyframes skills-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skills-rotate {
+  transform-origin: center;
+  animation: skills-rotation 16s infinite linear;
+}
+
+/* Rotate Skills AntiClockwise to stay vertical */
+@keyframes skills-rotation-negate {
+  from {
+    transform: rotate(360deg) translateX(220px);
+  }
+  to {
+    transform: rotate(0deg) translateX(220px);
+  }
+}
+
+.skills-rotate-negate {
+  animation: skills-rotation-negate 16s infinite linear;
+}
+
+/* Pulse Pointer Icon */
+@keyframes pointer-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-pointer {
+  animation: pointer-pulse 1.5s infinite ease-in-out;
+}
