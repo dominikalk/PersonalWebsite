@@ -1,6 +1,7 @@
 import AppIcon from "components/common/AppIcon";
 import Tab from "components/common/Tab";
 import { Tab as TabType } from "pages/index";
+import { useHomeContext } from "providers/home.provider";
 import { Dispatch, SetStateAction } from "react";
 
 type ContactTabProps = {
@@ -10,6 +11,8 @@ type ContactTabProps = {
 };
 
 const ContactTab = ({ onClose, setCurrentTab, className }: ContactTabProps) => {
+  const { isTextScrambled } = useHomeContext();
+
   const handleGithubClicked = () => {
     window.open("https://github.com/dominikalk", "_blank");
   };
@@ -64,8 +67,8 @@ const ContactTab = ({ onClose, setCurrentTab, className }: ContactTabProps) => {
           labelType="visible"
         />
         <AppIcon
-          name="Don't Click This"
-          icon="/icons/question.svg"
+          name={isTextScrambled ? "Anti Virus" : "Don't Click This"}
+          icon={isTextScrambled ? "icons/antivirus.svg" : "/icons/question.svg"}
           onClick={() => setCurrentTab("virus")}
           labelType="visible"
         />
