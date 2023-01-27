@@ -2,6 +2,7 @@ import { Tab } from "pages/index";
 import { Dispatch, SetStateAction } from "react";
 import AppIcon from "components/common/AppIcon";
 import { useWindowSize } from "hooks/useWindowResize";
+import { useHomeContext } from "providers/home.provider";
 
 type NavbarProps = {
   currentTab: Tab;
@@ -9,6 +10,7 @@ type NavbarProps = {
 };
 
 const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
+  const { isTextScrambled } = useHomeContext();
   const size = useWindowSize();
 
   const handleGithubClicked = () => {
@@ -75,8 +77,10 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
               onClick={() => handleGithubClicked()}
             />
             <AppIcon
-              name="Don't Click This"
-              icon="/icons/question.svg"
+              name={isTextScrambled ? "Antivirus" : "Don't Click This"}
+              icon={
+                isTextScrambled ? "icons/antivirus.svg" : "/icons/question.svg"
+              }
               active={currentTab === "virus"}
               onClick={() =>
                 setCurrentTab(currentTab === "virus" ? undefined : "virus")
