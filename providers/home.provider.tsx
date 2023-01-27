@@ -1,4 +1,4 @@
-import { Skill } from "components/tabs/SkillsTab";
+import { Skill } from "public/data/skills";
 import React, { SetStateAction, useContext, useState } from "react";
 
 type Stats = {

@@ -17,7 +17,6 @@ const GamesTab = ({ onClose, className }: GamesTabProps) => {
         <GameTab
           title="EvoSim"
           image="https://img.itch.zone/aW1nLzMxOTk2OTIucG5n/315x250%23c/fLN0ip.png"
-          download={() => {}}
           github="https://github.com/dominikalk/EvolutionSim"
           itch="https://dominikalk.itch.io/evosim"
           className="min-[525px]:w-1/2"
@@ -25,8 +24,6 @@ const GamesTab = ({ onClose, className }: GamesTabProps) => {
         <GameTab
           title="Pack Yak Bandit"
           image="https://img.itch.zone/aW1nLzMzNzk4MjcucG5n/315x250%23c/zEXlqN.png"
-          play={() => {}}
-          download={() => {}}
           github="https://github.com/dominikalk/PackYakBandit"
           itch="https://dominikalk.itch.io/pack-yak-bandit"
           className="min-[525px]:w-1/2"

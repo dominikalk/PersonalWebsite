@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium atque et eaque facilis modi provident similique commodi ab vitae? Eos natus ab, omnis, magnam ad ipsum accusantium veritatis pariatur ipsam soluta ut cum laudantium illum explicabo exercitationem voluptatibus quod quaerat earum mollitia! Reiciendis ipsam ut ducimus, blanditiis architecto soluta aliquam?",
     image:
-      "https://scontent.fbrs4-1.fna.fbcdn.net/v/t39.30808-6/312209949_182698534276973_2146466389355432496_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=P63X6skLJWwAX8xrIv5&_nc_ht=scontent.fbrs4-1.fna&oh=00_AfBx0zMtGBzJ-sj0xb2OPb1bAwTQ7DeAPwn105fOMN_FHw&oe=63B76803",
+      "https://media.licdn.com/dms/image/D560BAQEY2dF5iM_LTg/company-logo_200_200/0/1666120876128?e=2147483647&v=beta&t=_MkppIC_DbFWh0ii-kOSSj4YrKhX9_27NXdUl8YcU4Y",
   },
   {
     title: "BeePro",
