@@ -13,16 +13,15 @@ const ProjectsList = ({ setCurrentProject }: ProjectsListProps) => {
         <div
           key={project.title}
           onClick={() => setCurrentProject(project)}
-          className="aspect-square flex items-center justify-center bg-no-repeat bg-cover bg-center hover:brightness-125 group rounded-lg cursor-pointer"
+          className="aspect-square flex items-center justify-center bg-no-repeat bg-cover bg-center bg-[#b5b5b5] hover:bg-white group rounded-lg cursor-pointer"
           style={{
             backgroundImage: `url("${project.image}")`,
-            backgroundColor: "grey",
             backgroundBlendMode: "multiply",
           }}
         >
           <ScrambleText
             as="p"
-            className="text-center text-xl group-hover:text-2xl"
+            className="text-center text-xl group-hover:text-2xl pt-1 px-2 rounded bg-[#969696] bg-opacity-75"
           >
             {project.title}
           </ScrambleText>

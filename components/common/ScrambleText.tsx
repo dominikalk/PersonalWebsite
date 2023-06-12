@@ -1,12 +1,13 @@
 import { useHomeContext } from "providers/home.provider";
 import { scrambleText } from "helpers/scrambleText";
-import { ElementType } from "react";
+import { CSSProperties, ElementType } from "react";
 
 type ScrambleTextProps = {
   children: string;
   as?: ElementType;
   scramble?: boolean;
   className?: string;
+  style?: CSSProperties | undefined;
 };
 
 const ScrambleText = ({
@@ -14,13 +15,14 @@ const ScrambleText = ({
   as = "p",
   scramble,
   className,
+  style,
 }: ScrambleTextProps) => {
   const Element = as;
 
   const { isTextScrambled } = useHomeContext();
 
   return (
-    <Element className={className}>
+    <Element className={className} style={style}>
       {scrambleText(
         children,
         scramble === undefined ? isTextScrambled : scramble

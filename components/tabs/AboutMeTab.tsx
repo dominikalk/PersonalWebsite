@@ -1,7 +1,7 @@
 import ScrambleText from "components/common/ScrambleText";
 import Tab from "components/common/Tab";
 import Image from "next/image";
-import profilePic from "public/images/profile.jpeg";
+import profilePic from "public/images/profile.png";
 
 type AboutMeTabProps = {
   onClose: () => void;

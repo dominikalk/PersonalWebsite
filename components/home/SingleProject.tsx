@@ -26,10 +26,20 @@ const SingleProject = ({
           <Image
             src={project.image}
             alt="project thumbnail"
-            className="rounded-lg w-full"
+            className="rounded-lg w-full bg-white"
             width={400}
             height={400}
           />
+          <div className="mt-6 text-justify">
+            {project.links?.map((link, i) => (
+              <>
+                {i !== 0 && <span className="mx-1"> • </span>}
+                <a href={link.url} target="_blank" className="text-lg">
+                  {link.title}
+                </a>
+              </>
+            ))}
+          </div>
         </div>
         <div className="xs:w-2/3">
           <ScrambleText as="h1" className="text-2xl mb-4">
