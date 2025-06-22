@@ -8,6 +8,7 @@ type AppIconProps = {
   onClick: () => void;
   labelType?: "hover" | "visible";
   active?: boolean;
+  scramble?: boolean;
 };
 
 const AppIcon = ({
@@ -16,6 +17,7 @@ const AppIcon = ({
   onClick,
   labelType = "hover",
   active,
+  scramble
 }: AppIconProps) => {
   return (
     <div
@@ -25,6 +27,7 @@ const AppIcon = ({
       {labelType === "hover" && (
         <ScrambleText
           as="div"
+          scramble={scramble}
           className={`absolute top-0 -mt-14 bg-white bg-opacity-20 rounded-md p-1 px-2 whitespace-nowrap hidden ${
             isDesktop ? "group-hover:block" : ""
           }`}
@@ -54,6 +57,7 @@ const AppIcon = ({
       ) : (
         <ScrambleText
           as="p"
+          scramble={scramble}
           className="w-16 h-9 text-center mt-2 overflow-hidden text-ellipsis text-sm"
         >
           {name}

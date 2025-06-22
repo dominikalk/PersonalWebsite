@@ -69,6 +69,7 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
               <AppIcon
                 name="Antivirus"
                 icon="/icons/antivirus.svg"
+                scramble={false}
                 onClick={() => {
                   setCurrentTab(currentTab === "virus" ? undefined : "virus");
                   setIsTextScrambled(false);
