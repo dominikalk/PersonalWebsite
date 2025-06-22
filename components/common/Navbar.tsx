@@ -1,8 +1,10 @@
 import { Tab } from "pages/index";
 import { Dispatch, SetStateAction } from "react";
-import AppIcon from "components/common/AppIcon";
 import { useWindowSize } from "hooks/useWindowResize";
 import { useHomeContext } from "providers/home.provider";
+import AppIcon from "components/common/AppIcon";
+
+const NAV_COMPACT_THRESHOLD = 640;
 
 type NavbarProps = {
   currentTab: Tab;
@@ -53,7 +55,7 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
             setCurrentTab(currentTab === "contact" ? undefined : "contact")
           }
         />
-        {size.width >= 640 ? (
+        {size.width >= NAV_COMPACT_THRESHOLD ? (
           <>
             <AppIcon
               name="Games"

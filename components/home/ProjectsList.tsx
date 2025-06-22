@@ -21,7 +21,7 @@ const ProjectsList = ({ setCurrentProject }: ProjectsListProps) => {
         >
           <ScrambleText
             as="p"
-            className="text-center text-xl group-hover:text-2xl pt-1 px-2 rounded bg-[#969696] bg-opacity-75"
+            className="text-center text-xl group-hover:text-2xl pt-1 px-2 mx-2 rounded bg-[#05988d] bg-opacity-75"
           >
             {project.title}
           </ScrambleText>
