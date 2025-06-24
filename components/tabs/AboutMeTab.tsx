@@ -17,9 +17,9 @@ const AboutMeTab = ({ onClose, className }: AboutMeTabProps) => {
     >
       <div className="flex items-center flex-col sm:flex-row sm:gap-8">
         <div className="w-full mb-4 sm:w-3/5 sm:mb-0">
-          <ScrambleText as="p" className="mb-2">Hi! I'm Dominik</ScrambleText>
+          <ScrambleText as="p" className="mb-2">Hi! I&apos;m Dominik</ScrambleText>
           <ScrambleText as="p" className="mb-2">
-            I'm a .NET developer based in the UK, working at{" "}
+            I&apos;m a .NET developer based in the UK, working at{" "}
             <a href="https://urbanthings.co/" target="_blank" rel="noreferrer">UrbanThings</a>{" "}
             to build transport technology solutions.
           </ScrambleText>

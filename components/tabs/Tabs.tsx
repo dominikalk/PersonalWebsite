@@ -8,6 +8,7 @@ import SkillsTab from "components/tabs/SkillsTab";
 import GamesTab from "components/tabs/GamesTab";
 import StatsTab from "components/tabs/StatsTab";
 import AllTab from "components/tabs/AllTab";
+import ExperienceTab from "components/tabs/ExperienceTab";
 
 type TabsProps = {
   currentTab: Tab;
@@ -31,7 +32,13 @@ const Tabs = ({ currentTab, setCurrentTab }: TabsProps) => {
       {currentTab === "projects" && (
         <ProjectsTab
           onClose={() => setCurrentTab(undefined)}
-          className="w-[90%] lg:w-3/5"
+          className="w-[90%] lg:w-[800px]"
+        />
+      )}
+      {currentTab === "experience" && (
+        <ExperienceTab
+          onClose={() => setCurrentTab(undefined)}
+          className="w-[600px]"
         />
       )}
       {currentTab === "skills" && (

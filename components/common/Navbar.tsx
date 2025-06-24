@@ -40,13 +40,21 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
           }
         />
         <AppIcon
+          name="Experience"
+          icon="/icons/briefcase.svg"
+          active={currentTab === "experience"}
+          onClick={() =>
+            setCurrentTab(currentTab === "experience" ? undefined : "experience")
+          }
+        />
+        {/* <AppIcon
           name="Skills"
           icon="/icons/lightbulb.svg"
           active={currentTab === "skills"}
           onClick={() =>
             setCurrentTab(currentTab === "skills" ? undefined : "skills")
           }
-        />
+        /> */}
         <AppIcon
           name="Contact Me"
           icon="/icons/envelope.svg"
@@ -57,14 +65,14 @@ const Navbar = ({ currentTab, setCurrentTab }: NavbarProps) => {
         />
         {size.width >= NAV_COMPACT_THRESHOLD ? (
           <>
-            <AppIcon
+            {/* <AppIcon
               name="Games"
               icon="/icons/gamepad.svg"
               active={currentTab === "games"}
               onClick={() =>
                 setCurrentTab(currentTab === "games" ? undefined : "games")
               }
-            />
+            /> */}
             {isTextScrambled && (
               <AppIcon
                 name="Antivirus"

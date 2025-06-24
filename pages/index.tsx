@@ -8,6 +8,7 @@ import { useHomeContext } from "providers/home.provider";
 export type Tab =
   | "about"
   | "projects"
+  | "experience"
   | "skills"
   | "contact"
   | "virus"

@@ -36,24 +36,29 @@ const ContactTab = ({ onClose, setCurrentTab, className }: ContactTabProps) => {
           onClick={() => setCurrentTab("projects")}
           labelType="visible"
         />
-        <AppIcon
+         <AppIcon
+          name="Experience"
+          icon="/icons/briefcase.svg"
+          onClick={() => setCurrentTab("experience")}
+        />
+        {/* <AppIcon
           name="Skills"
           icon="/icons/lightbulb.svg"
           onClick={() => setCurrentTab("skills")}
           labelType="visible"
-        />
+        /> */}
         <AppIcon
           name="Contact Me"
           icon="/icons/envelope.svg"
           onClick={() => setCurrentTab("contact")}
           labelType="visible"
         />
-        <AppIcon
+        {/* <AppIcon
           name="Games"
           icon="/icons/gamepad.svg"
           onClick={() => setCurrentTab("games")}
           labelType="visible"
-        />
+        /> */}
         {isTextScrambled && (
           <AppIcon
             name="Anti Virus"

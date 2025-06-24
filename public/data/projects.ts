@@ -118,7 +118,7 @@ export const projects: Project[] = [
       worked on a number of projects. These included:", 
       "Bother - an ecommerce household essentials service,",
       "Uplevyl - female-forward platform created to amplify women's unique voices and perspectives,",
-      "and BeePro - a job management app for tradespeople,"
+      "and BeePro - a job management app for tradespeople."
     ],
     image: "/images/3sidedcube.png",
     links: [

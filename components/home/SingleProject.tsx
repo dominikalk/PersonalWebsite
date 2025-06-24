@@ -29,7 +29,7 @@ const SingleProject = ({
         <div className="w-full xs:w-1/3 relative">
           <Image
             src={project.image}
-            alt="project thumbnail"
+            alt={`${project.title} thumbnail`}
             className="rounded-lg w-full bg-white"
             width={400}
             height={400}
@@ -39,7 +39,7 @@ const SingleProject = ({
               <>
                 {i !== 0 && <span className="mx-1"> • </span>}
                 <ScrambleText as="span">
-                  <a href={link.url} target="_blank" className="text-lg inline-block">
+                  <a href={link.url} target="_blank" rel="noreferrer" className="text-lg inline-block">
                     {link.title}
                   </a>
                 </ScrambleText>
@@ -51,8 +51,8 @@ const SingleProject = ({
           <ScrambleText as="h1" className="text-2xl mb-2">
             {project.title}
           </ScrambleText>
-          {project.description.map(paragraph =>
-            <ScrambleText as="p" className="text-lg">
+          {project.description.map((paragraph, i) =>
+            <ScrambleText as="p" className="text-lg" key={i}>
               {paragraph}
             </ScrambleText>
           )}
